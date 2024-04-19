@@ -54,14 +54,14 @@ const CardDescription = React.forwardRef<
 CardDescription.displayName = "CardDescription";
 
 const cardContentVariants = cva(
-  "text-pretty font-mono text-sm text-muted-foreground",
+  "text-pretty font-mono text-sm text-muted-foreground text-xs",
   {
     variants: {
       variant: {
         default:
           "",
         note:
-            "italic text-xs text-muted-foreground",
+            "italic text-muted-foreground",
       },
     },
     defaultVariants: {

@@ -10,8 +10,9 @@ const work = [
     company: "Flojoy",
     start: 2024,
     end: "Now",
+    loc: "Montreal, Quebec, Canada",
     link: "https://flojoy.ai",
-    title: "Software Engineer / Product Designer",
+    title: "Product-Focused Software Engineer",
     description: "Originally hired as a Hardware and ML Engineer to extend the capabilities of Flojoy Studio (an open-source alternative to LabVIEW), I quickly transitioned into a role of Product Designer when the company pivoted to an adjacent market, tackling Test and Measurement automation for PCB board testing. Within 3 months, we developed a test sequencer for manufacturing and engineering. We provide a full-stack solution, comprising a desktop application for developing and running tests, along with a cloud solution for managing and visualizing the tests and data.",
     badges: ["Product Design", "Typescript", "Python", "Hardware Design", "Project Management"],
     notes: ["Reporting directly to Jack Parmer, CEO of Flojoy and previously founder of Plotly", "Working with two truly talented engineers: Jeff Zhang & Xiaowei (Joey) Yu"]
@@ -20,8 +21,9 @@ const work = [
     company: "Boreal Ventures",
     start: 2024,
     end: 2024,
+    loc: "Montreal, Quebec, Canada",
     link: "https://boreal.vc",
-    title: "Analyst - Seed Stage Venture Capitalist",
+    title: "Analyst Seed Stage Venture Capitalist",
     description: "Market analysis across diverse technical domains such as AI, medical devices, carbon storage, SaaS, and more. - Developing investment return models based on ownership and financial projections. Creating investment memoranda for science-focused companies, which were subsequently shared with the investment committee.",
     badges: ["VC", "Technologic Market Analysis", "Investment Return Models", "Investment Memoranda"],
     notes: []
@@ -30,21 +32,27 @@ const work = [
     company: "Tesla",
     start: "Summer",
     end: 2023,
-    link: "https://flojoy.ai",
-    title: "Software engineer (Internship)",
+    loc: "Palo Alto, California, US",
+    link: "https://tesla.com",
+    title: "Software engineer Intern",
     description: "Reverse engineering of a Product Data Modeller (3D Experience) to programmatically access data from a Java GRPC microservice. Refactoring of a Java microservice by simplifying code and removing code duplication. Smoke-test to automatically test microservice on deployment in Python / Pytest / Github action / Helm.",
-    badges: [],
-    notes: ["Palo Alto, California, US", "Supervisor & Mentor: Manu Radhakrishna - Sr Staff Software Eng."]
+    badges: ["Java", "Reverse Engineering Software", "Testing", "Python", "GRPC"],
+    notes: ["Supervisor & Mentor: Manu Radhakrishna - Sr Staff Software Eng."]
+  },
+]
+
+const internships = [
+  {
+    company: "Pratt & Whitney",
+    description: "Automation of an electron beam welding machine based on part dimensions.",
   },
   {
-    company: "Internships",
-    start: "Summer",
-    end: "2018 to 2022",
-    link: "",
-    title: "Realized through my Bachelor's Degree",
-    description: "",
-    badges: ["Python", "Java", "DevOps"],
-    notes: ["Pratt & Whitney: Automation of an electron beam welding machine based on part dimensions", "Innocap: Design, development and deployment of a Python API to automate risk calculations", "Desjardins: Development of Kafka Streams applications in Java and DevOps pipeline."]
+    company: "Innocap",
+    description: "Design, development and deployment of a Python API to automate risk calculations.",
+  },
+  {
+    company: "Desjardins",
+    description: "Development of Kafka Streams applications in Java and DevOps pipeline.",
   },
 ]
 
@@ -142,7 +150,10 @@ function Cv() {
                     {work.title}
                   </h4>
                 </CardHeader>
-                <CardContent className="mt-2 text-xs">
+                <CardContent variant="note">
+                    {work.loc}
+                </CardContent>
+                <CardContent className="mt-2">
                   {work.description}
                 </CardContent>
                 <div className="py-0.5" />
@@ -165,6 +176,25 @@ function Cv() {
               </Card>
             );
           })}
+        { internships.length !== 0 && (
+          <Section className="mt-4">
+          <Card>
+            <CardHeader className="pb-2"> 
+              <h3 className="gap-x-1 font-semibold leading-none"> Internships as part of my bachelor's degree </h3>
+            </CardHeader>
+            {internships.map((internship) => (
+              <>
+                <h4 className="text-sm mt-1">
+                  {internship.company}
+                </h4>
+                <CardContent>
+                  -{" "}{internship.description}
+                </CardContent>
+              </>
+            ))}
+            </Card>
+            </Section>
+        )}
         </Section>
         <Section>
           <h2 className="text-xl font-bold">Education</h2>
@@ -199,7 +229,6 @@ function Cv() {
         </Section>
         <Section>
           <h2 className="text-xl font-bold">Skills</h2>
-          <h3 className="text-md font-bold">Programming Languages</h3>
           <div className="flex flex-wrap gap-1">
             <Badge>Python</Badge>
             <Badge>TypeScript</Badge>
@@ -208,13 +237,9 @@ function Cv() {
             <Badge>Machine Learning</Badge>
             <Badge>Deep Learning</Badge>
             <Badge>Data Science</Badge>
-          </div>
-          <h3 className="text-md font-bold">Other</h3>
-          <div className="flex flex-wrap gap-1"> 
             <Badge>Product Design</Badge>
             <Badge>UI/UX</Badge>
             <Badge>Project Management</Badge>
-            <Badge>"Public" Speaking</Badge>
             <Badge>French</Badge>
             <Badge>English</Badge>
           </div>
