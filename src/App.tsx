@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Button } from '@/components/ui/button'
+import { ThemeProvider } from './components/providers/themeProvider'
+import { ThemeToggle } from './components/controls/themeToggle'
 
 
 function App() {
@@ -10,6 +12,8 @@ function App() {
 
   return (
     <>
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+        <ThemeToggle />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -34,6 +38,7 @@ function App() {
         Hello world!
       </h1>
       <Button> Click me </Button>
+      </ThemeProvider>
     </>
   )
 }
