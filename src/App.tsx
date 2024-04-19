@@ -18,12 +18,12 @@ const router = createBrowserRouter(
   createRoutesFromElements([
     <Route
       path="/" 
-      element={<Home />} 
+      element={<Cv/>}
       errorElement={<ErrorBoundary />}
     />,
     <Route
-      path="/cv"
-      element={<Cv/>}
+      path="/home"
+      element={<Home />} 
       errorElement={<ErrorBoundary />}
     />
   ])
