@@ -1,43 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { Button } from '@/components/ui/button'
 import { ThemeProvider } from './components/providers/themeProvider'
-import { ThemeToggle } from './components/controls/themeToggle'
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, useRouteError } from 'react-router-dom'
+import Home from './routes/home/home';
+import Cv from './routes/cv/cv';
+import React from 'react';
+
+
+function ErrorBoundary() {
+  const error: Error = useRouteError() as Error;
+  return (
+    // <ErrorPage error={error} resetErrorBoundary={() => location.reload()} />
+    <p> Error: {error.message} </p>
+  );
+}
+
+const router = createBrowserRouter(
+  createRoutesFromElements([
+    <Route
+      path="/" 
+      element={<Home />} 
+      errorElement={<ErrorBoundary />}
+    />,
+    <Route
+      path="/cv"
+      element={<Cv/>}
+      errorElement={<ErrorBoundary />}
+    />
+  ])
+);
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-        <ThemeToggle />
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <Button> Click me </Button>
+        <React.StrictMode>
+            <RouterProvider router={router} />
+          </React.StrictMode>
       </ThemeProvider>
     </>
   )
