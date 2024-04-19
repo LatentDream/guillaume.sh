@@ -56,6 +56,55 @@ const internships = [
   },
 ]
 
+const projects = [
+  {
+    title: "Flojoy Studio",
+    description: "Open-source alternative to LabVIEW & TestStand.",
+    link: "https://github.com/flojoy-ai/studio/",
+    imgLink: "/images/flojoy-studio.png",
+    techs: ["Python", "Typescript", "React"],
+  },
+  {
+    title: "Watson AI",
+    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. The teams is still using it to this day.",
+    link: "https://github.com/flojoy-ai/studio/",
+    imgLink: "/images/flojoy-studio.png",
+    techs: ["Rust", "AI", "Typescript", "Tauri"],
+  },
+  {
+    title: "Art Commun",
+    description: "Hosted a Text to Image model. Currently offline because I'm GPU poor.",
+    link: "https://github.com/flojoy-ai/studio/",
+    imgLink: "/images/flojoy-studio.png",
+    techs: ["GenAI", "Self Hosting AI model", "Diffusion Model Training", "React", "Python"],
+  },
+  {
+    title: "Duckietown",
+    description: "Focuses on perception, navigation, planning and control problems at the system level integration in the context of self-driving vehicles. Montreal Self driven Class 2022 given by Liam Paul.",
+    link: "https://duckietown.com/",
+    imgLink: "/images/flojoy-studio.png",
+    techs: ["Duckietown", "Python", "ROS", "AI", "Perspection", "Planing"],
+  },
+  {
+    title: "Intelligent agent to play Quoridor",
+    description: "A project for the AI class at Polytechnique Montreal. The goal was to develop an intelligent agent to play the game Quoridor.",
+    link: "https://github.com/guthi1/Algo-AI/tree/master/Quorridor%20Projet",
+    imgLink: "/images/flojoy-studio.png",
+    techs: ["Python", "AI", "Game Theory"],
+  },
+  {
+    title: "2nd place at Polytechnique AI Hackatown - 2022",
+    description: "Plant disease classification from images",
+    link: "https://github.com/guthi1/Hackathon-poly-AI-2022",
+    techs: ["ResNet", "Keras", "Python", "AI", "Hackathon"],
+  },
+  {
+    title: "3rd place Data Challenge HEC - 2021",
+    description: "Predict book sales: In order to try something innovative, we built a pipeline to retrieve the book title, synopsis, and cover of all the books whose identifiers were provided by scraping the web. After performing the data acquisition pipeline, we build a model to perform the prediction. We encoded the texts and images in the embedding and fed them to a pre-trained transformer.",
+    techs: ["NLP", "Data Pipeline", "Python", "AI", "Hackathon"],
+  },
+]
+
 
 function Cv() {
   return (
