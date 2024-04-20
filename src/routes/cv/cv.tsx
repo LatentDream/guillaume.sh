@@ -76,7 +76,7 @@ import { ThemeToggle } from "@/components/controls/themeToggle";
 const projects = [
   {
     title: "Flojoy Studio",
-    description: "Currently working on a ppen-source alternative to LabVIEW & TestStand.",
+    description: "Currently working on a open-source alternative to LabVIEW & TestStand.",
     link: "https://github.com/flojoy-ai/studio/",
     imgLink: [flojoySequencerImage, flojoyStudioImage,  bedOfNailImage],
     techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design", "PCB Testing"],
