@@ -78,7 +78,7 @@ const projects = [
     title: "Flojoy Studio",
     description: "Currently working on a open-source alternative to LabVIEW & TestStand.",
     link: "https://github.com/flojoy-ai/studio/",
-    imgLink: [flojoySequencerImage, flojoyStudioImage,  bedOfNailImage],
+    imgLink: [flojoySequencerImage, flojoyStudioImage, bedOfNailImage],
     techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design", "PCB Testing"],
   },
   {
@@ -91,14 +91,13 @@ const projects = [
   {
     title: "Watson AI",
     description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the app if you ask).",
-    link: "https://github.com/flojoy-ai/studio/",
     imgLink: [watsonImage, watsonImage2],
     techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "Producut Design", "UI/UX", "Plugin integration"],
   },
   {
     title: "Art Commun",
-    description: "Self hosted a Text to Image model. Currently offline because I'm GPU poor. :(",
-    link: "https://github.com/flojoy-ai/studio/",
+    description: "Self hosted Text to Image model. Currently offline because I'm GPU poor. :(",
+    link: "https://github.com/LatentDream/Art-commun",
     imgLink: [PreComputeImage, PostComputeImage],
     techs: ["GenAI", "Self-hosted AI Model", "Diffusion Model Training", "React", "Python"],
   },
@@ -159,47 +158,47 @@ function Cv() {
                 target="_blank"
               >
                 <GlobeIcon className="size-3" />
-                  Montreal, Quebec, Canada
+                Montreal, Quebec, Canada
               </a>
             </p>
             <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
-            <Button
-              className="size-8"
-              variant="outline"
-              size="icon"
-              asChild
-            >
-              <a href={`mailto:guillaume.thibault.98@proton.me`}>
-                <EnvelopeClosedIcon className="size-4" />
-              </a>
-            </Button>
-            <Button
-              key="Linkedin"
-              className="size-8"
-              variant="outline"
-              size="icon"
-              asChild
-            >
-              <a href="https://www.linkedin.com/in/guillaume-thibault/">
-                <LinkedInLogoIcon className="size-4" />
-              </a>
-            </Button>
-            <Button
-              key="Github"
-              className="size-8"
-              variant="outline"
-              size="icon"
-              asChild
-            >
-              <a href="https://github.com/latentDream/">
-                <GitHubLogoIcon className="size-4" />
-              </a>
-            </Button>
+              <Button
+                className="size-8"
+                variant="outline"
+                size="icon"
+                asChild
+              >
+                <a href={`mailto:guillaume.thibault.98@proton.me`}>
+                  <EnvelopeClosedIcon className="size-4" />
+                </a>
+              </Button>
+              <Button
+                key="Linkedin"
+                className="size-8"
+                variant="outline"
+                size="icon"
+                asChild
+              >
+                <a href="https://www.linkedin.com/in/guillaume-thibault/" target="_blank">
+                  <LinkedInLogoIcon className="size-4" />
+                </a>
+              </Button>
+              <Button
+                key="Github"
+                className="size-8"
+                variant="outline"
+                size="icon"
+                asChild
+              >
+                <a href="https://github.com/latentDream/" target="_blank">
+                  <GitHubLogoIcon className="size-4" />
+                </a>
+              </Button>
             </div>
             <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
-                <a href={`mailto:guillaume.thibault.98@proton.me`}>
-                  <span className="underline">guillaume.thibault.98@proton.me</span>
-                </a>
+              <a href={`mailto:guillaume.thibault.98@proton.me`}>
+                <span className="underline">guillaume.thibault.98@proton.me</span>
+              </a>
             </div>
           </div>
 
@@ -222,10 +221,10 @@ function Cv() {
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
                     <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                      <a className="hover:underline" href={work.link}>
+                      <a className="hover:underline" href={work.link} target="_blank">
                         {work.company}
                       </a>
-                   </h3>
+                    </h3>
                     <div className="text-sm tabular-nums text-gray-500">
                       {work.start} - {work.end}
                     </div>
@@ -236,7 +235,7 @@ function Cv() {
                   </h4>
                 </CardHeader>
                 <CardContent variant="note">
-                    {work.loc}
+                  {work.loc}
                 </CardContent>
                 <CardContent className="mt-2">
                   {work.description}
@@ -244,7 +243,7 @@ function Cv() {
                 <div className="py-0.5" />
                 {work.notes.map((note) => (
                   <CardContent variant="note">
-                    -{" "}{ note }
+                    -{" "}{note}
                   </CardContent>
                 ))}
                 <div className="flex flex-wrap gap-2 mt-1">
@@ -261,68 +260,68 @@ function Cv() {
               </Card>
             );
           })}
-        { internships.length !== 0 && (
-          <Section className="mt-4">
-          <Card>
-            <CardHeader className="pb-2"> 
-              <h3 className="gap-x-1 font-semibold leading-none"> Internships as part of my bachelor's degree </h3>
-            </CardHeader>
-            {internships.map((internship) => (
-              <>
-                <h4 className="text-sm mt-0.5">
-                  {internship.company}
-                </h4>
-                <CardContent>
-                  -{" "}{internship.description}
-                </CardContent>
-              </>
-            ))}
-            </Card>
+          {internships.length !== 0 && (
+            <Section className="mt-4">
+              <Card>
+                <CardHeader className="pb-2">
+                  <h3 className="gap-x-1 font-semibold leading-none"> Internships as part of my bachelor's degree </h3>
+                </CardHeader>
+                {internships.map((internship) => (
+                  <>
+                    <h4 className="text-sm mt-0.5">
+                      {internship.company}
+                    </h4>
+                    <CardContent>
+                      -{" "}{internship.description}
+                    </CardContent>
+                  </>
+                ))}
+              </Card>
             </Section>
-        )}
+          )}
         </Section>
         <Section>
           <h2 className="text-xl font-bold">Education</h2>
-            <div className="grid grid-cols-2 gap-4">
-              <Card>
-                <CardHeader>
-                  <h3 className="gap-x-1 font-semibold">
-                    Master's degrees in Artificial Intelligenc
-                  </h3>
-                  <h4 className="font-mono text-sm leading-none">
-                    Polytechnique Montreal
-                  </h4>
-                </CardHeader>
-                <CardContent className="mt-2 text-xs">
-                  Professional Master to get up to speed with artificial intelligence research as well as to discover interesting fields of application. 
-                </CardContent>
-                <CardContent className="mt-2 text-xs">
-                  The project was done with a pension fund to introduce methods for analyzing sentiment in a currency hedging model while ensuring explainability of results.
-                </CardContent>
-                <CardContent variant="note" className="ml-1">
-                  - Unpublish due to private data/methode. 
-                </CardContent>
-                <CardContent variant="note" className="ml-1">
-                  - Presented at Tokio Tech University in Japan.
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <h3 className="gap-x-1 font-semibold">
-                    Bachelor's degree Software Engineering
-                  </h3>
-                  <h4 className="font-mono text-sm leading-none">
-                    Polytechnique Montreal
-                  </h4>
-                </CardHeader>
-                <CardContent className="mt-2 text-xs">
-                  With a minor in finance with a focus on sustainable investment & innovation; Enriched by 3 master courses and two international seminars in Europe and Japan. 
-                </CardContent>
-                <CardContent className="mt-2 text-xs">
-                  Promoted data science through the organization of the first two editions of the Polytechnique data science hackathon. More than 50 participants in graduate study per edition with more than 8 corporate sponsors.
-                </CardContent>
-              </Card>
-            </div>
+          <div className="grid grid-cols-2 gap-4">
+            <Card>
+              <CardHeader>
+                <h3 className="gap-x-1 font-semibold">
+                  Master's degrees in Artificial Intelligenc
+                </h3>
+                <h4 className="font-mono text-sm leading-none">
+                  Polytechnique Montreal
+                </h4>
+              </CardHeader>
+              <CardContent className="mt-2 text-xs">
+                Professional Master to get up to speed with artificial intelligence research as well as to discover interesting fields of application.
+              </CardContent>
+              <CardContent className="mt-2 text-xs">
+                The project was done with a pension fund to introduce methods for analyzing sentiment in a currency hedging model while ensuring explainability of results.
+              </CardContent>
+              <CardContent variant="note" className="ml-1">
+                - Unpublish due to private data/methode.
+              </CardContent>
+              <CardContent variant="note" className="ml-1">
+                - Presented at Tokio Tech University in Japan.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <h3 className="gap-x-1 font-semibold">
+                  Bachelor's degree Software Engineering
+                </h3>
+                <h4 className="font-mono text-sm leading-none">
+                  Polytechnique Montreal
+                </h4>
+              </CardHeader>
+              <CardContent className="mt-2 text-xs">
+                With a minor in finance with a focus on sustainable investment & innovation; Enriched by 3 master courses and two international seminars in Europe and Japan.
+              </CardContent>
+              <CardContent className="mt-2 text-xs">
+                Promoted data science through the organization of the first two editions of the Polytechnique data science hackathon. More than 50 participants in graduate study per edition with more than 8 corporate sponsors.
+              </CardContent>
+            </Card>
+          </div>
         </Section>
         <Section>
           <h2 className="text-xl font-bold">Skills</h2>
@@ -345,29 +344,38 @@ function Cv() {
         <Section className="print-force-new-page scroll-mb-16">
           <h2 className="text-xl font-bold">Projects</h2>
           <div className="-mx-3">
-            { projects.map((project) => (
+            {projects.map((project) => (
               <Card className="border border-muted p-3 my-1" key={project.title}>
                 <CardHeader className="relative x-[-1rem]">
-                  <h3 className="mx-2 gap-x-1 font-semibold">
-                    <a className="hover:underline" href={project.link}>
-                      {project.title}
-                    </a>
+                  <h3 className="inline-flex gap-2 mx-2 gap-x-1 font-semibold">
+                    {project.link !== undefined ? (
+                      <>
+                        <a className="hover:underline" href={project.link} target="_blank">
+                          {project.title}
+                        </a>
+                        {project.link?.includes("github") ? (
+                          <GitHubLogoIcon className="size-4 mt-1" />
+                        ) : (
+                          <GlobeIcon className="size-4 mt-1" />
+                        )}
+                      </>
+                    ):(<p>{project.title}</p>)}
                   </h3>
                 </CardHeader>
                 <CardContent className="mx-2">
                   {project.description}
                 </CardContent>
-                { project.imgLink.length > 0 && (
+                {project.imgLink.length > 0 && (
                   <Carousel className="mx-12 my-2 items-center">
                     <CarouselContent>
-                      { project.imgLink.map((img) => (
+                      {project.imgLink.map((img) => (
                         <CarouselItem className="items-center">
                           <img src={img} alt="" className="rounded-lg" />
                         </CarouselItem>
                       ))}
                     </CarouselContent>
 
-                    { project.imgLink.length > 1 && (
+                    {project.imgLink.length > 1 && (
                       <>
                         <CarouselPrevious />
                         <CarouselNext />
