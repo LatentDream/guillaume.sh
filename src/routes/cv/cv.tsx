@@ -60,7 +60,7 @@ const internships = [
 
 import flojoySequencerImage from '../../assets/flojoy-sequencer.png';
 import flojoyStudioImage from '../../assets/flojoy-studio.png';
-import bedOfNailGif from '../../assets/bed-of-nail.gif';
+import bedOfNailImage from '../../assets/bed-of-nail.png';
 import PreComputeImage from '../../assets/pre-compute.png';
 import PostComputeImage from '../../assets/post-compute.png';
 import duckietownGif1 from '../../assets/duckietown_1.gif';
@@ -69,6 +69,8 @@ import duckietownGif3 from '../../assets/duckietown_3.gif';
 import duckietownGif4 from '../../assets/duckietown_4.gif';
 import q_demo from '../../assets/q_demo.gif';
 import q_demo2 from '../../assets/q_demo_2.gif';
+import watsonImage from '../../assets/watson.png';
+import watsonImage2 from '../../assets/watson2.png';
 
 
 const projects = [
@@ -76,7 +78,7 @@ const projects = [
     title: "Flojoy Studio",
     description: "Currently working on a ppen-source alternative to LabVIEW & TestStand.",
     link: "https://github.com/flojoy-ai/studio/",
-    imgLink: [flojoyStudioImage, flojoySequencerImage, bedOfNailGif],
+    imgLink: [flojoyStudioImage, flojoySequencerImage, bedOfNailImage],
     techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design", "PCB Testing"],
   },
   {
@@ -90,7 +92,7 @@ const projects = [
     title: "Watson AI",
     description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the app if you ask).",
     link: "https://github.com/flojoy-ai/studio/",
-    imgLink: ["../../assets/flojoy-sequencer.png"],
+    imgLink: [watsonImage, watsonImage2],
     techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
   },
   {
