@@ -79,7 +79,7 @@ const projects = [
     description: "Currently working on a open-source alternative to LabVIEW & TestStand.",
     link: "https://github.com/flojoy-ai/studio/",
     imgLink: [flojoySequencerImage, flojoyStudioImage, bedOfNailImage],
-    techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design", "PCB Testing"],
+    techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design"],
   },
   {
     title: "Shepherd",
@@ -92,7 +92,7 @@ const projects = [
     title: "Watson AI",
     description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the app if you ask).",
     imgLink: [watsonImage, watsonImage2],
-    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "Producut Design", "UI/UX", "Plugin integration"],
+    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
   },
   {
     title: "Art Commun",
@@ -286,7 +286,7 @@ function Cv() {
             <Card>
               <CardHeader>
                 <h3 className="gap-x-1 font-semibold">
-                  Master's degrees in Artificial Intelligenc
+                  Master's degrees in Artificial Intelligence
                 </h3>
                 <h4 className="font-mono text-sm leading-none">
                   Polytechnique Montreal
@@ -297,9 +297,6 @@ function Cv() {
               </CardContent>
               <CardContent className="mt-2 text-xs">
                 The project was done with a pension fund to introduce methods for analyzing sentiment in a currency hedging model while ensuring explainability of results.
-              </CardContent>
-              <CardContent variant="note" className="ml-1">
-                - Unpublish due to private data/methode.
               </CardContent>
               <CardContent variant="note" className="ml-1">
                 - Presented at Tokio Tech University in Japan.
