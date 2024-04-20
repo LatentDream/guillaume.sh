@@ -14,9 +14,9 @@ const work = [
     loc: "Montreal, Quebec, Canada",
     link: "https://flojoy.ai",
     title: "Product-Focused Software Engineer",
-    description: "Originally hired as a Hardware and ML Engineer to extend the capabilities of Flojoy Studio (an open-source alternative to LabVIEW), I quickly transitioned into a role of Product Designer when the company pivoted to an adjacent market, tackling Test and Measurement automation for PCB board testing. Within 3 months, we developed a test sequencer for manufacturing and engineering. We provide a full-stack solution, comprising a desktop application for developing and running tests, along with a cloud solution for managing and visualizing the tests and data.",
+    description: "Originally hired as a Hardware and ML Engineer to extend the capabilities of Flojoy Studio (an open-source alternative to LabVIEW), I quickly transitioned into the role of Product Designer when the company pivoted to an adjacent market, tackling Test and Measurement automation for PCB board testing. Within 3 months, we developed a test sequencer for manufacturing and engineering. We provide a full-stack solution comprising a desktop application for developing and running tests, along with a cloud solution for managing and visualizing the tests and data.",
     badges: ["Product Design", "Typescript", "Python", "Hardware Design", "Project Management"],
-    notes: ["Reporting directly to Jack Parmer, CEO of Flojoy and previously founder of Plotly", "Working with two truly talented engineers: Jeff Zhang & Xiaowei (Joey) Yu"]
+    notes: ["Reporting directly to Jack Parmer, CEO of Flojoy and previously founder of Plotly"]
   },
   {
     company: "Boreal Ventures",
@@ -88,7 +88,7 @@ const projects = [
   },
   {
     title: "Watson AI",
-    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the code if you ask).",
+    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the app if you ask).",
     link: "https://github.com/flojoy-ai/studio/",
     imgLink: ["../../assets/flojoy-sequencer.png"],
     techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
@@ -104,15 +104,22 @@ const projects = [
     title: "Duckietown",
     description: "Focuses on perception, navigation, planning and control problems at the system level integration in the context of self-driving vehicles. Montreal Self driven Class 2022 given by Liam Paul.",
     link: "https://duckietown.com/",
-    imgLink: [duckietownGif1, duckietownGif2, duckietownGif3, duckietownGif4],
-    techs: ["Duckietown", "Python", "ROS", "AI", "Perspection", "Planing"],
+    imgLink: [duckietownGif3, duckietownGif1, duckietownGif2, duckietownGif4],
+    techs: ["Duckietown", "Python", "ROS", "AI", "Perspection", "Planing", "School Project"],
+  },
+  {
+    title: "Technical Analysts & Artificial Intelligence",
+    description: "Technical blog to practice writing. Subject: The idea is to try out image analysis models having the translation invariance property on technical graphs, with the aim that machine learning techniques learn technical analysis signals directly. The article is dedicated to a first proof of concept in the subject.",
+    link: "https://github.com/LatentDream/technical-analysis-trading-dumpster-fire/blob/main/Article_En.ipynb",
+    imgLink: [],
+    techs: ["Technical Writing", "Finance", "Trading", "Deep Learning"],
   },
   {
     title: "Intelligent agent to play Quoridor",
     description: "A project for the AI class at Polytechnique Montreal. The goal was to develop an intelligent agent to play the game Quoridor.",
     link: "https://github.com/guthi1/Algo-AI/tree/master/Quorridor%20Projet",
     imgLink: [q_demo, q_demo2],
-    techs: ["Python", "AI", "Game Theory"],
+    techs: ["Python", "AI", "Game Theory", "School Project"],
   },
   {
     title: "2nd place at Polytechnique AI Hackatown - 2022",
@@ -138,7 +145,7 @@ function Cv() {
           <div className="flex-none space-y-1.5">
             <h1 className="text-2xl font-bold items-start">Guillaume Thibault</h1>
             <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
-              Software Engineer
+              Software Engineer 🕹️
             </p>
             <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
               <a
@@ -199,7 +206,7 @@ function Cv() {
         <Section>
           <h2 className="text-xl font-bold">About</h2>
           <p className="text-pretty font-mono text-sm text-muted-foreground">
-            Hi! I'm Guillaume :) Passionate about problem-solving, system building, and art. My journey began with a bachelor's degree in software engineering, where I explored the world of applied mathematics and learned the intricacies of computer systems. Fascinated by their complexity, I recently completed a professional master's degree in artificial intelligence and data science.
+            Hi! I'm Guillaume :) Passionate about problem-solving, system building, and art. My journey began with a bachelor's degree in software engineering, where I explored the world of applied mathematics and learned the intricacies of computer systems. Fascinated by their complexity, I completed a professional master's degree in artificial intelligence and data science. I'm now working at Flojoy, an Open-Source company working toward a new way to ensure quality in advanced hardware manufacturing.
           </p>
         </Section>
         <Section>
@@ -275,6 +282,28 @@ function Cv() {
               <Card>
                 <CardHeader>
                   <h3 className="gap-x-1 font-semibold">
+                    Master's degrees in Artificial Intelligenc
+                  </h3>
+                  <h4 className="font-mono text-sm leading-none">
+                    Polytechnique Montreal
+                  </h4>
+                </CardHeader>
+                <CardContent className="mt-2 text-xs">
+                  Professional Master to get up to speed with artificial intelligence research as well as to discover interesting fields of application. 
+                </CardContent>
+                <CardContent className="mt-2 text-xs">
+                  The project was done with a pension fund to introduce methods for analyzing sentiment in a currency hedging model while ensuring explainability of results.
+                </CardContent>
+                <CardContent variant="note" className="ml-1">
+                  - Unpublish due to private data/methode. 
+                </CardContent>
+                <CardContent variant="note" className="ml-1">
+                  - Presented at Tokio Tech University in Japan.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <h3 className="gap-x-1 font-semibold">
                     Bachelor's degree Software Engineering
                   </h3>
                   <h4 className="font-mono text-sm leading-none">
@@ -282,20 +311,10 @@ function Cv() {
                   </h4>
                 </CardHeader>
                 <CardContent className="mt-2 text-xs">
-                  With a minor in finance with a focus on sustainable investment & innovation; Enriched by 3 master courses and two international seminars in Europe and Japan. Promoted data science through the organization of the first two editions of the Polytechnique data science hackathon. More than 50 participants in graduate study per edition with more than 8 corporate sponsors.
+                  With a minor in finance with a focus on sustainable investment & innovation; Enriched by 3 master courses and two international seminars in Europe and Japan. 
                 </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <h3 className="gap-x-1 font-semibold">
-                    Master's Degree in Computer Engineering.
-                  </h3>
-                  <h4 className="font-mono text-sm leading-none">
-                    Polytechnique Montreal
-                  </h4>
-                </CardHeader>
                 <CardContent className="mt-2 text-xs">
-                  Professional Master to get up to speed with artificial intelligence research as well as to discover interesting fields of application. Project done with a pension fund to introduce methods for analyzing the sentiment of central bank texts in a currency hedging model while being able to have a form of explicability of results.
+                  Promoted data science through the organization of the first two editions of the Polytechnique data science hackathon. More than 50 participants in graduate study per edition with more than 8 corporate sponsors.
                 </CardContent>
               </Card>
             </div>
@@ -322,7 +341,7 @@ function Cv() {
           <h2 className="text-xl font-bold">Projects</h2>
           <div className="-mx-3">
             { projects.map((project) => (
-              <Card className="border border-muted p-3 bg-muted my-1" key={project.title}>
+              <Card className="border border-muted p-3 my-1" key={project.title}>
                 <CardHeader className="relative x-[-1rem]">
                   <h3 className="mx-2 gap-x-1 font-semibold">
                     <a className="hover:underline" href={project.link}>
