@@ -64,7 +64,6 @@ import bedOfNailImage from '../../assets/bed-of-nail.png';
 import PreComputeImage from '../../assets/pre-compute.png';
 import PostComputeImage from '../../assets/post-compute.png';
 import duckietownGif1 from '../../assets/duckietown_1.gif';
-import duckietownGif2 from '../../assets/duckietown_2.gif';
 import duckietownGif3 from '../../assets/duckietown_3.gif';
 import duckietownGif4 from '../../assets/duckietown_4.gif';
 import q_demo from '../../assets/q_demo.gif';
@@ -106,7 +105,7 @@ const projects = [
     title: "Duckietown",
     description: "Focuses on perception, navigation, planning and control problems at the system level integration in the context of self-driving vehicles. Montreal Self driven Class 2022 given by Liam Paul.",
     link: "https://duckietown.com/",
-    imgLink: [duckietownGif3, duckietownGif1, duckietownGif2, duckietownGif4],
+    imgLink: [duckietownGif3, duckietownGif1, duckietownGif4],
     techs: ["Duckietown", "Python", "ROS", "AI", "Perspection", "Planing", "School Project"],
   },
   {
