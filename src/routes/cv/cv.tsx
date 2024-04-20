@@ -35,7 +35,7 @@ const work = [
     end: 2023,
     loc: "Palo Alto, California, US",
     link: "https://tesla.com",
-    title: "Software engineer Intern",
+    title: "Software Engineer Intern",
     description: "Reverse engineering of a Product Data Modeller (3D Experience) to programmatically access data from a Java GRPC microservice. Refactoring of a Java microservice by simplifying code and removing code duplication. Smoke-test to automatically test microservice on deployment in Python / Pytest / Github action / Helm.",
     badges: ["Java", "Reverse Engineering Software", "Testing", "Python", "GRPC"],
     notes: ["Supervisor & Mentor: Manu Radhakrishna - Sr Staff Software Eng."]
