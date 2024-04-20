@@ -269,7 +269,7 @@ function Cv() {
             </CardHeader>
             {internships.map((internship) => (
               <>
-                <h4 className="text-sm mt-1">
+                <h4 className="text-sm mt-0.5">
                   {internship.company}
                 </h4>
                 <CardContent>
