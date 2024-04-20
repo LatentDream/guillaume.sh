@@ -1,7 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/job-card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Section } from "@/components/ui/section";
 import { EnvelopeClosedIcon, GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 
@@ -56,52 +57,75 @@ const internships = [
   },
 ]
 
+
+import flojoySequencerImage from '../../assets/flojoy-sequencer.png';
+import flojoyStudioImage from '../../assets/flojoy-studio.png';
+import bedOfNailGif from '../../assets/bed-of-nail.gif';
+import PreComputeImage from '../../assets/pre-compute.png';
+import PostComputeImage from '../../assets/post-compute.png';
+import duckietownGif1 from '../../assets/duckietown_1.gif';
+import duckietownGif2 from '../../assets/duckietown_2.gif';
+import duckietownGif3 from '../../assets/duckietown_3.gif';
+import duckietownGif4 from '../../assets/duckietown_4.gif';
+import q_demo from '../../assets/q_demo.gif';
+import q_demo2 from '../../assets/q_demo_2.gif';
+
+
 const projects = [
   {
     title: "Flojoy Studio",
-    description: "Open-source alternative to LabVIEW & TestStand.",
+    description: "Currently working on a ppen-source alternative to LabVIEW & TestStand.",
     link: "https://github.com/flojoy-ai/studio/",
-    imgLink: "/images/flojoy-studio.png",
-    techs: ["Python", "Typescript", "React"],
+    imgLink: [flojoyStudioImage, flojoySequencerImage, bedOfNailGif],
+    techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design", "PCB Testing"],
+  },
+  {
+    title: "Shepherd",
+    description: "Little project to learn about unsafe Rust and the bindings between C and the language. It works on Unix and Windows platforms.",
+    link: "https://github.com/LatentDream/shepherd",
+    imgLink: [],
+    techs: ["Rust", "C", "Unix", "Windows", "Unsafe Rust", "No Dependencies", "Side Project"],
   },
   {
     title: "Watson AI",
-    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. The teams is still using it to this day.",
+    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the code if you ask).",
     link: "https://github.com/flojoy-ai/studio/",
-    imgLink: "/images/flojoy-studio.png",
-    techs: ["Rust", "AI", "Typescript", "Tauri"],
+    imgLink: ["../../assets/flojoy-sequencer.png"],
+    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
   },
   {
     title: "Art Commun",
-    description: "Hosted a Text to Image model. Currently offline because I'm GPU poor.",
+    description: "Self hosted a Text to Image model. Currently offline because I'm GPU poor. :(",
     link: "https://github.com/flojoy-ai/studio/",
-    imgLink: "/images/flojoy-studio.png",
-    techs: ["GenAI", "Self Hosting AI model", "Diffusion Model Training", "React", "Python"],
+    imgLink: [PreComputeImage, PostComputeImage],
+    techs: ["GenAI", "Self-hosted AI Model", "Diffusion Model Training", "React", "Python"],
   },
   {
     title: "Duckietown",
     description: "Focuses on perception, navigation, planning and control problems at the system level integration in the context of self-driving vehicles. Montreal Self driven Class 2022 given by Liam Paul.",
     link: "https://duckietown.com/",
-    imgLink: "/images/flojoy-studio.png",
+    imgLink: [duckietownGif1, duckietownGif2, duckietownGif3, duckietownGif4],
     techs: ["Duckietown", "Python", "ROS", "AI", "Perspection", "Planing"],
   },
   {
     title: "Intelligent agent to play Quoridor",
     description: "A project for the AI class at Polytechnique Montreal. The goal was to develop an intelligent agent to play the game Quoridor.",
     link: "https://github.com/guthi1/Algo-AI/tree/master/Quorridor%20Projet",
-    imgLink: "/images/flojoy-studio.png",
+    imgLink: [q_demo, q_demo2],
     techs: ["Python", "AI", "Game Theory"],
   },
   {
     title: "2nd place at Polytechnique AI Hackatown - 2022",
     description: "Plant disease classification from images",
     link: "https://github.com/guthi1/Hackathon-poly-AI-2022",
+    imgLink: [],
     techs: ["ResNet", "Keras", "Python", "AI", "Hackathon"],
   },
   {
     title: "3rd place Data Challenge HEC - 2021",
     description: "Predict book sales: In order to try something innovative, we built a pipeline to retrieve the book title, synopsis, and cover of all the books whose identifiers were provided by scraping the web. After performing the data acquisition pipeline, we build a model to perform the prediction. We encoded the texts and images in the embedding and fed them to a pre-trained transformer.",
     techs: ["NLP", "Data Pipeline", "Python", "AI", "Hackathon"],
+    imgLink: [],
   },
 ]
 
@@ -296,10 +320,50 @@ function Cv() {
 
         <Section className="print-force-new-page scroll-mb-16">
           <h2 className="text-xl font-bold">Projects</h2>
-          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
-            <p> ... </p>
-            <p> ... </p>
-            <p> ... </p>
+          <div className="-mx-3">
+            { projects.map((project) => (
+              <Card className="border border-muted p-3 bg-muted my-1" key={project.title}>
+                <CardHeader className="relative x-[-1rem]">
+                  <h3 className="mx-2 gap-x-1 font-semibold">
+                    <a className="hover:underline" href={project.link}>
+                      {project.title}
+                    </a>
+                  </h3>
+                </CardHeader>
+                <CardContent className="mx-2">
+                  {project.description}
+                </CardContent>
+                { project.imgLink.length > 0 && (
+                  <Carousel className="mx-12 my-2 items-center">
+                    <CarouselContent>
+                      { project.imgLink.map((img) => (
+                        <CarouselItem className="items-center">
+                          <img src={img} alt="" className="rounded-lg" />
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+
+                    { project.imgLink.length > 1 && (
+                      <>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                      </>
+                    )}
+                  </Carousel>
+                )}
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {project.techs.map((tech) => (
+                    <Badge
+                      variant="secondary"
+                      className="align-middle text-xs"
+                      key={tech}
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </Card>
+            ))}
           </div>
         </Section>
       </section>
