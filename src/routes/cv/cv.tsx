@@ -70,6 +70,7 @@ import q_demo from '../../assets/q_demo.gif';
 import q_demo2 from '../../assets/q_demo_2.gif';
 import watsonImage from '../../assets/watson.png';
 import watsonImage2 from '../../assets/watson2.png';
+import { ThemeToggle } from "@/components/controls/themeToggle";
 
 
 const projects = [
@@ -77,7 +78,7 @@ const projects = [
     title: "Flojoy Studio",
     description: "Currently working on a ppen-source alternative to LabVIEW & TestStand.",
     link: "https://github.com/flojoy-ai/studio/",
-    imgLink: [flojoyStudioImage, flojoySequencerImage, bedOfNailImage],
+    imgLink: [flojoySequencerImage, flojoyStudioImage,  bedOfNailImage],
     techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design", "PCB Testing"],
   },
   {
@@ -92,7 +93,7 @@ const projects = [
     description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the app if you ask).",
     link: "https://github.com/flojoy-ai/studio/",
     imgLink: [watsonImage, watsonImage2],
-    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
+    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "Producut Design", "UI/UX", "Plugin integration"],
   },
   {
     title: "Art Commun",
@@ -141,7 +142,10 @@ const projects = [
 function Cv() {
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
+      <div className="absolute right-6 top-6">
+        <ThemeToggle />
+      </div>
+      <section className="mx-auto w-full max-w-2xl space-y-8 print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-none space-y-1.5">
             <h1 className="text-2xl font-bold items-start">Guillaume Thibault</h1>
