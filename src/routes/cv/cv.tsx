@@ -13,7 +13,7 @@ const work = [
     end: "Now",
     loc: "Montreal, Quebec, Canada",
     link: "https://flojoy.ai",
-    title: "Product-Focused Software Engineer",
+    title: "Software Engineer",
     description: "Originally hired as a Hardware and ML Engineer to extend the capabilities of Flojoy Studio (an open-source alternative to LabVIEW), I quickly transitioned into the role of Product Designer when the company pivoted to an adjacent market, tackling Test and Measurement automation for PCB board testing. Within 3 months, we developed a test sequencer for manufacturing and engineering. We provide a full-stack solution comprising a desktop application for developing and running tests, along with a cloud solution for managing and visualizing the tests and data.",
     badges: ["Product Design", "Typescript", "Python", "Hardware Design", "Project Management"],
     notes: ["Reporting directly to Jack Parmer, CEO of Flojoy and previously founder of Plotly"]
@@ -99,7 +99,7 @@ const projects = [
     description: "Self hosted Text to Image model. Currently offline because I'm GPU poor. :(",
     link: "https://github.com/LatentDream/Art-commun",
     imgLink: [PreComputeImage, PostComputeImage],
-    techs: ["GenAI", "Self-hosted AI Model", "Diffusion Model Training", "React", "Python"],
+    techs: ["GenAI", "Self-hosted AI Model", "Diffusion Model Training", "Python", "Side Project"],
   },
   {
     title: "Duckietown",
@@ -140,7 +140,7 @@ const projects = [
 
 function Cv() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16 p-[2rem] m-auto max-w-[1280px]">
       <div className="absolute right-6 top-6">
         <ThemeToggle />
       </div>
