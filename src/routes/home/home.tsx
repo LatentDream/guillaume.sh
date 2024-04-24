@@ -1,10 +1,11 @@
-
+import { ThemeToggle } from "@/components/controls/themeToggle"
 
 function Home() {
 
   return (
     <>
-      <div> Home </div>
+      <div className="text-xl font-['Redacted'] hover:font-mono"> Home </div>
+      <ThemeToggle />
     </>
   )
 }
