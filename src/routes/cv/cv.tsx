@@ -201,11 +201,6 @@ function Cv() {
               </a>
             </div>
           </div>
-
-          <Avatar className="size-28">
-            <AvatarImage alt="Guillaume" src="https://media.licdn.com/dms/image/D4E03AQGGTqeL7rlyug/profile-displayphoto-shrink_400_400/0/1666219805654?e=1718841600&v=beta&t=rMpr10abhfcmzigibyisHSV-oDyv3a2_Icmwf4TlePo" />
-            <AvatarFallback>G.T.</AvatarFallback>
-          </Avatar>
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>

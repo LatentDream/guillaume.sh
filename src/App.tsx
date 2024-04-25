@@ -1,6 +1,6 @@
 import './App.css'
 import { ThemeProvider } from './components/providers/themeProvider'
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, useRouteError } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useRouteError } from 'react-router-dom'
 import Home from './routes/home/home';
 import Cv from './routes/cv/cv';
 import React from 'react';
@@ -14,30 +14,27 @@ function ErrorBoundary() {
   );
 }
 
-const router = createBrowserRouter(
-  createRoutesFromElements([
-    <Route
-      path="/" 
-      element={<Cv/>}
-      errorElement={<ErrorBoundary />}
-    />,
-    <Route
-      path="/home"
-      element={<Home />} 
-      errorElement={<ErrorBoundary />}
-    />
-  ])
-);
-
-
 function App() {
 
   return (
     <>
       <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
         <React.StrictMode>
-            <RouterProvider router={router} />
-          </React.StrictMode>
+          <BrowserRouter>
+            <Routes>
+              <Route
+                path="/"
+                element={<Cv />}
+                errorElement={<ErrorBoundary />}
+              />,
+              <Route
+                path="/home"
+                element={<Home />}
+                errorElement={<ErrorBoundary />}
+              />
+            </Routes>
+          </BrowserRouter>
+        </React.StrictMode>
       </ThemeProvider>
     </>
   )
