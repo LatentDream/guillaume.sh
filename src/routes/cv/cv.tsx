@@ -4,6 +4,20 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Section } from "@/components/ui/section";
 import { EnvelopeClosedIcon, GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { ThemeToggle } from "@/components/controls/themeToggle";
+import flojoySequencerImage from '../../assets/flojoy-sequencer.png';
+import flojoyStudioImage from '../../assets/flojoy-studio.png';
+import bedOfNailImage from '../../assets/bed-of-nail.png';
+import PreComputeImage from '../../assets/pre-compute.png';
+import PostComputeImage from '../../assets/post-compute.png';
+import duckietownGif1 from '../../assets/duckietown_1.gif';
+import duckietownGif3 from '../../assets/duckietown_3.gif';
+import duckietownGif4 from '../../assets/duckietown_4.gif';
+import q_demo from '../../assets/q_demo.gif';
+import q_demo2 from '../../assets/q_demo_2.gif';
+import watsonImage from '../../assets/watson.png';
+import watsonImage2 from '../../assets/watson2.png';
+
 
 const work = [
   {
@@ -55,21 +69,6 @@ const internships = [
     description: "Development of Kafka Streams applications in Java and DevOps pipeline.",
   },
 ]
-
-
-import flojoySequencerImage from '../../assets/flojoy-sequencer.png';
-import flojoyStudioImage from '../../assets/flojoy-studio.png';
-import bedOfNailImage from '../../assets/bed-of-nail.png';
-import PreComputeImage from '../../assets/pre-compute.png';
-import PostComputeImage from '../../assets/post-compute.png';
-import duckietownGif1 from '../../assets/duckietown_1.gif';
-import duckietownGif3 from '../../assets/duckietown_3.gif';
-import duckietownGif4 from '../../assets/duckietown_4.gif';
-import q_demo from '../../assets/q_demo.gif';
-import q_demo2 from '../../assets/q_demo_2.gif';
-import watsonImage from '../../assets/watson.png';
-import watsonImage2 from '../../assets/watson2.png';
-import { ThemeToggle } from "@/components/controls/themeToggle";
 
 
 const projects = [
@@ -139,12 +138,9 @@ const projects = [
 
 function Cv() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16 p-[2rem] m-auto max-w-[1280px]">
-      <div className="absolute right-6 top-6">
-        <ThemeToggle />
-      </div>
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16 m-auto max-w-[1280px]">
       <section className="mx-auto w-full max-w-2xl space-y-8 print:space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex justify-between">
           <div className="flex-none space-y-1.5">
             <h1 className="text-2xl font-bold items-start">Guillaume Thibault</h1>
             <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
@@ -200,6 +196,7 @@ function Cv() {
               </a>
             </div>
           </div>
+          <ThemeToggle />
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>
@@ -293,7 +290,7 @@ function Cv() {
                 The project was done with a pension fund to introduce methods for analyzing sentiment in a currency hedging model while ensuring explainability of results.
               </CardContent>
               <CardContent variant="note" className="ml-1">
-                - Presented at Tokio Tech University in Japan.
+                - Presented at Tokyo Tech University in Japan.
               </CardContent>
             </Card>
             <Card>
