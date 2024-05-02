@@ -22,14 +22,14 @@ import watsonImage2 from '../../assets/watson2.png';
 const work = [
   {
     company: "Flojoy",
-    start: 2024,
-    end: "Now",
+    start: "January 2024",
+    end: "Now 2024",
     loc: "Montreal, Quebec, Canada",
     link: "https://flojoy.ai",
     title: "Software Engineer",
-    description: "Originally hired as a Hardware and ML Engineer to extend the capabilities of Flojoy Studio (an open-source alternative to LabVIEW), I quickly transitioned into the role of Product Designer when the company pivoted to an adjacent market, tackling Test and Measurement automation for PCB board testing. Within 3 months, we developed a test sequencer for manufacturing and engineering. We provide a full-stack solution comprising a desktop application for developing and running tests, along with a cloud solution for managing and visualizing the tests and data.",
+    description: "Originally hired as a Hardware and ML Engineer to extend the capabilities of Flojoy Studio (an open-source alternative to LabVIEW), I quickly transitioned into the role of Product Designer and Full Stack Engineer when the company pivoted to an adjacent market, tackling Test and Measurement automation for PCB board testing. Within 3 months, we developed a test sequencer for manufacturing and engineering (desktop application for developing and running tests, along with a cloud solution for managing and visualizing the tests and data.)",
     badges: ["Product Design", "Typescript", "Python", "Hardware Design", "Project Management"],
-    notes: ["Reporting directly to Jack Parmer, CEO of Flojoy and previously founder of Plotly"]
+    notes: ["2000+ download a month", "Reporting directly to Jack Parmer, CEO of Flojoy and previously founder of Plotly"]
   },
   {
     company: "Boreal Ventures",
