@@ -17,6 +17,10 @@ import q_demo from '../../assets/q_demo.gif';
 import q_demo2 from '../../assets/q_demo_2.gif';
 import watsonImage from '../../assets/watson.png';
 import watsonImage2 from '../../assets/watson2.png';
+import wav from '../../assets/wav.png';
+import bitmap from '../../assets/bitmap.png';
+import x86 from '../../assets/x86.png';
+
 
 
 const work = [
@@ -28,8 +32,8 @@ const work = [
     link: "https://flojoy.ai",
     title: "Software Engineer",
     description: "Originally hired as a Hardware and ML Engineer to extend the capabilities of Flojoy Studio (an open-source alternative to LabVIEW), I quickly transitioned into the role of Product Designer and Full Stack Engineer when the company pivoted to an adjacent market, tackling Test and Measurement automation for PCB board testing. Within 3 months, we developed a test sequencer for manufacturing and engineering (desktop application for developing and running tests, along with a cloud solution for managing and visualizing the tests and data.)",
-    badges: ["Product Design", "Typescript", "Python", "Hardware Design", "Project Management"],
-    notes: ["2000+ download a month", "Reporting directly to Jack Parmer, CEO of Flojoy and previously founder of Plotly"]
+    badges: ["Product Design", "Typescript", "React", "Python", "Hardware Design", "C", "Project Management"],
+    notes: ["Traction: 2500+ installations per month of our Desktop application", "Reporting directly to Jack Parmer, CEO of Flojoy and previously CEO & founder of Plotly"]
   },
   {
     company: "Boreal Ventures",
@@ -39,7 +43,7 @@ const work = [
     link: "https://boreal.vc",
     title: "Analyst Seed Stage Venture Capitalist",
     description: "Market analysis across diverse technical domains such as AI, medical devices, carbon storage, SaaS, and more. - Developing investment return models based on ownership and financial projections. Creating investment memoranda for science-focused companies, which were subsequently shared with the investment committee.",
-    badges: ["VC", "Technologic Market Analysis", "Investment Return Models", "Investment Memoranda"],
+    badges: ["VC", "Technologic Market Analysis", "Investment Return Models", "Investment Memoranda", "SamiAgtech"],
     notes: ["Investments I've worked on: Flojoy, Palisade, Femtum"],
   },
   {
@@ -73,8 +77,15 @@ const internships = [
 
 const projects = [
   {
+    title: "Bustelo",
+    description: "[WORK IN PROGRESS] CLI & GUI tool to generate the representation of how the infomration is store in a file. This tool can allow to speed up the identification of the file format since it exist some general strcuture that are distinc on how the information is store in each file type.",
+    link: "https://github.com/latentdream/bustelo",
+    imgLink: [bitmap, x86, wav],
+    techs: ["C", "Raylib", "Reverse Engineering"],
+  },
+  {
     title: "Flojoy Studio",
-    description: "Currently working on a open-source alternative to LabVIEW & TestStand.",
+    description: "Open-source alternative to LabVIEW & TestStand.",
     link: "https://github.com/flojoy-ai/studio/",
     imgLink: [flojoySequencerImage, flojoyStudioImage, bedOfNailImage],
     techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design"],
@@ -315,15 +326,18 @@ function Cv() {
           <h2 className="text-xl font-bold">Skills</h2>
           <div className="flex flex-wrap gap-1">
             <Badge>Python</Badge>
-            <Badge>TypeScript</Badge>
             <Badge>Rust</Badge>
+            <Badge>TypeScript / WebDev</Badge>
             <Badge>Java</Badge>
+            <Badge>C</Badge>
             <Badge>Machine Learning</Badge>
             <Badge>Deep Learning</Badge>
             <Badge>Data Science</Badge>
             <Badge>Product Design</Badge>
             <Badge>UI/UX</Badge>
             <Badge>Project Management</Badge>
+            <Badge>AWS</Badge>
+            <Badge>Analytical Skills</Badge>
             <Badge>French</Badge>
             <Badge>English</Badge>
           </div>
