@@ -43,8 +43,8 @@ const work = [
     link: "https://boreal.vc",
     title: "Analyst Seed Stage Venture Capitalist",
     description: "Market analysis across diverse technical domains such as AI, medical devices, carbon storage, SaaS, and more. - Developing investment return models based on ownership and financial projections. Creating investment memoranda for science-focused companies, which were subsequently shared with the investment committee.",
-    badges: ["VC", "Technologic Market Analysis", "Investment Return Models", "Investment Memoranda", "SamiAgtech"],
-    notes: ["Investments I've worked on: Flojoy, Palisade, Femtum"],
+    badges: ["VC", "Technologic Market Analysis", "Investment Return Models", "Investment Memoranda"],
+    notes: ["Investments I've worked on: Flojoy, Palisade, Femtum, SamiAgtech"],
   },
   {
     company: "Tesla",
