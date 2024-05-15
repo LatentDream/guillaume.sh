@@ -218,7 +218,7 @@ function Cv() {
         <Section>
           <h2 className="text-xl font-bold">About</h2>
           <p className="text-pretty font-mono text-sm text-muted-foreground">
-            Hi! I'm Guillaume :) Passionate about problem-solving, system building, and art. My journey began with a bachelor's degree in software engineering, where I explored the world of applied mathematics and learned the intricacies of computer systems. Fascinated by their complexity, I completed a professional master's degree in artificial intelligence and data science. I'm now working at Flojoy, an Open-Source company working toward a new way to ensure quality in advanced hardware manufacturing.
+            Hi! I'm Guillaume :) Passionate about problem-solving, system building, and art. My journey began with a bachelor's degree in software engineering, where I explored the world of applied mathematics and learned the intricacies of computer systems. Fascinated by their complexity, I completed a professional master's degree in artificial intelligence and data science. I'm interested in the entire software stack, from crafting intuitive user experiences to optimizing backend systems for performance and scalability.
           </p>
         </Section>
         <Section>
