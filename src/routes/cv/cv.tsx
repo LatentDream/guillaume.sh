@@ -37,8 +37,8 @@ const work = [
   },
   {
     company: "Boreal Ventures",
-    start: "May 2024",
-    end: "December 2024",
+    start: "May 2023",
+    end: "December 2023",
     loc: "Montreal, Quebec, Canada",
     link: "https://boreal.vc",
     title: "Analyst Seed Stage Venture Capitalist",
@@ -49,7 +49,7 @@ const work = [
   {
     company: "Tesla",
     start: "Summer",
-    end: 2023,
+    end: 2022,
     loc: "Palo Alto, California, US",
     link: "https://tesla.com",
     title: "Software Engineer Intern",
