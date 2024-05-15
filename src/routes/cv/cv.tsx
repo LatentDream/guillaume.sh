@@ -205,6 +205,12 @@ function Cv() {
               <a href={`mailto:guillaume.thibault.98@proton.me`}>
                 <span className="underline">guillaume.thibault.98@proton.me</span>
               </a>
+              <a href={`https://www.linkedin.com/in/guillaume-thibault/`}>
+                <span className="underline">linkedin.com/in/guillaume-thibault</span>
+              </a>
+              <a href={`https://github.com/latentDream/`}>
+                <span className="underline">github.com/latentDream/</span>
+              </a>
             </div>
           </div>
           <ThemeToggle />
@@ -216,7 +222,7 @@ function Cv() {
           </p>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Work Experience</h2>
+          <h2 className="text-xl font-bold">Work Experiences</h2>
           {work.map((work) => {
             return (
               <Card key={work.company}>
@@ -281,6 +287,7 @@ function Cv() {
               </Card>
             </Section>
           )}
+          <p className="mt-4 text-xs text-muted-foreground"> Happy to provide recommendations upon request! </p>
         </Section>
         <Section>
           <h2 className="text-xl font-bold">Education</h2>
