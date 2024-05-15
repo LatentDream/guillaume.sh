@@ -350,7 +350,14 @@ function Cv() {
           </div>
         </Section>
 
-        <Section className="print-force-new-page scroll-mb-16">
+        <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
+          <h2 className="text-xl font-bold">Projects</h2>
+          <p className="text-pretty"> For a list of projects, please visit: <a href={`https://latentdream.dev`}>
+            <span className="underline">latentdream.dev</span>
+          </a></p>
+        </div>
+
+        <Section className="print-force-new-page scroll-mb-16 print:hidden">
           <h2 className="text-xl font-bold">Projects</h2>
           <div className="-mx-3">
             {projects.map((project) => (
@@ -368,7 +375,7 @@ function Cv() {
                           <GlobeIcon className="size-4 mt-1" />
                         )}
                       </>
-                    ):(<p>{project.title}</p>)}
+                    ) : (<p>{project.title}</p>)}
                   </h3>
                 </CardHeader>
                 <CardContent className="mx-2">
