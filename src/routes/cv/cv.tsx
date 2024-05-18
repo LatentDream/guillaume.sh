@@ -77,8 +77,15 @@ const internships = [
 
 const projects = [
   {
+    title: "Art Commun",
+    description: "[WORK IN PROGRESS] Visit ArtCommun.com for the full dev log, but the end goal here is to learn to build web stuff, without the normal web tech. And maybe having a simple game maybe in the browser in the end. Currently the backend is Rust, which will serve the account state, and the frontend might be in C ? Not sure, but I'm currently learning 3D rendering from scratch with C, and WebAssembly is next.",
+    link: "https://artcommun.com",
+    imgLink: [],
+    techs: ["Rust", "Postgres", "C", "Railway"],
+  },
+  {
     title: "Bustelo",
-    description: "[WORK IN PROGRESS] CLI & GUI tool to generate the representation of how the infomration is store in a file. This tool can allow to speed up the identification of the file format since it exist some general strcuture that are distinc on how the information is store in each file type.",
+    description: "CLI & GUI tool to generate the representation of how the infomration is store in a file. This tool can allow to speed up the identification of the file format since it exist some general strcuture that are distinc on how the information is store in each file type.",
     link: "https://github.com/latentdream/bustelo",
     imgLink: [bitmap, x86, wav],
     techs: ["C", "Raylib", "Reverse Engineering"],
@@ -104,7 +111,7 @@ const projects = [
     techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
   },
   {
-    title: "Art Commun",
+    title: "GenAI Hosted Text to Image",
     description: "Self hosted Text to Image model. Currently offline because I'm GPU poor. :(",
     link: "https://github.com/LatentDream/Art-commun",
     imgLink: [PreComputeImage, PostComputeImage],
