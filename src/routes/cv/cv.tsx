@@ -78,7 +78,7 @@ const internships = [
 const projects = [
   {
     title: "Art Commun",
-    description: "[WORK IN PROGRESS] The primary objective of this project is to explore web development using "unconventional" technologies, with the aim of creating a simple game (still not sure of the final desired output) that can run in a browser. Currently, the backend is done using Rust to handle account states and persistence, and the frontend might be implemented in C, though this is still under consideration. The current focus is to do 3D rendering from scratch with C, with plans to integrate WebAssembly next. Stay tuned for updates as the project evolves! For a full dev log, visit ArtCommun.com.",
+    description: "[WORK IN PROGRESS] The primary objective of this project is to explore web development using \"unconventional\" technologies, with the aim of creating a simple game (still not sure of the final desired output) that can run in a browser. Currently, the backend is done using Rust to handle account states and persistence, and the frontend might be implemented in C, though this is still under consideration. The current focus is to do 3D rendering from scratch with C, with plans to integrate WebAssembly next. Stay tuned for updates as the project evolves! For a full dev log, visit ArtCommun.com.",
     link: "https://artcommun.com",
     imgLink: [],
     techs: ["Rust", "Postgres", "C", "Railway"],
