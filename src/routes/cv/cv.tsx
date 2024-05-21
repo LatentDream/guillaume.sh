@@ -32,7 +32,7 @@ const work = [
     link: "https://flojoy.ai",
     title: "Software Engineer",
     description: "Originally hired as a Hardware and ML Engineer to extend the capabilities of Flojoy Studio (an open-source alternative to LabVIEW), I quickly transitioned into the role of Product Designer and Full Stack Engineer when the company pivoted to an adjacent market, tackling Test and Measurement automation for PCB board testing. Within 3 months, we developed a test sequencer for manufacturing and engineering (desktop application for developing and running tests, along with a cloud solution for managing and visualizing the tests and data.)",
-    badges: ["Product Design", "Typescript", "React", "Python", "C", "Project Management"],
+    badges: ["Product Design", "Typescript", "React", "Python", "C", "Project Management", "PostgresSQL"],
     notes: ["Traction: 2500+ installations per month of our Desktop application", "Reporting directly to Jack Parmer, CEO of Flojoy and previously CEO & founder of Plotly"]
   },
   {
@@ -81,7 +81,7 @@ const projects = [
     description: "[WORK IN PROGRESS] The primary objective of this project is to explore web development using \"unconventional\" technologies, with the aim of creating a simple game (still not sure of the final desired output) that can run in a browser. Currently, the backend is done using Rust to handle account states and persistence, and the frontend might be implemented in C, though this is still under consideration. The current focus is to do 3D rendering from scratch with C, with plans to integrate WebAssembly next. Stay tuned for updates as the project evolves! For a full dev log, visit ArtCommun.com.",
     link: "https://artcommun.com",
     imgLink: [],
-    techs: ["Rust", "Postgres", "C", "Railway"],
+    techs: ["Rust", "Postgres", "C", "WebAssembly"],
   },
   {
     title: "Bustelo",
@@ -342,6 +342,7 @@ function Cv() {
             <Badge>Python</Badge>
             <Badge>Rust</Badge>
             <Badge>TypeScript / WebDev</Badge>
+            <Badge>SQL</Badge>
             <Badge>Java</Badge>
             <Badge>C</Badge>
             <Badge>Machine Learning</Badge>
