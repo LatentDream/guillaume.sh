@@ -20,6 +20,7 @@ import watsonImage2 from '../../assets/watson2.png';
 import wav from '../../assets/wav.png';
 import bitmap from '../../assets/bitmap.png';
 import x86 from '../../assets/x86.png';
+import demo from '../../assets/demo.gif';
 
 
 
@@ -77,11 +78,18 @@ const internships = [
 
 const projects = [
   {
+    title: "Expresso",
+    description: "[WORK IN PROGRESS] Currently learning 3D Rendering from scratch in C. Can load 3D models with the texture and render them in a window. The scene can be explored with a \"FPS\" camera.",
+    link: "https://github.com/LatentDream/expresso",
+    imgLink: [demo],
+    techs: ["C"],
+  },
+  {
     title: "Art Commun",
-    description: "[WORK IN PROGRESS] The primary objective of this project is to explore web development using \"unconventional\" technologies, with the aim of creating a simple game (still not sure of the final desired output) that can run in a browser. Currently, the backend is done using Rust to handle account states and persistence, and the frontend might be implemented in C, though this is still under consideration. The current focus is to do 3D rendering from scratch with C, with plans to integrate WebAssembly next. Stay tuned for updates as the project evolves! For a full dev log, visit ArtCommun.com.",
+    description: "[WORK IN PROGRESS] The primary objective of this project is to explore some stuff. Currently, the backend is done using Rust to handle account states and persistence. And I'm currently exploring WebAssembly and what it is about. I have no idea of the desired output, but stay tuned for updates as the project evolves! For a full dev log, visit ArtCommun.com.",
     link: "https://artcommun.com",
     imgLink: [],
-    techs: ["Rust", "Postgres", "C", "WebAssembly"],
+    techs: ["Rust", "Postgres", "WebAssembly"],
   },
   {
     title: "Bustelo",
