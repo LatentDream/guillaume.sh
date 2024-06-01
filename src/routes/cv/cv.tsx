@@ -78,6 +78,12 @@ const internships = [
 
 const projects = [
   {
+    title: "Watson AI",
+    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the app if you ask).",
+    imgLink: [watsonImage, watsonImage2],
+    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
+  },
+  {
     title: "Expresso",
     description: "[WORK IN PROGRESS] Currently learning 3D Rendering from scratch in C. Can load 3D models with the texture and render them in a window. The scene can be explored with a \"FPS\" camera.",
     link: "https://github.com/LatentDream/expresso",
@@ -92,13 +98,6 @@ const projects = [
     techs: ["Rust", "Postgres", "WebAssembly"],
   },
   {
-    title: "Bustelo",
-    description: "CLI & GUI tool to generate the representation of how the infomration is store in a file. This tool can allow to speed up the identification of the file format since it exist some general strcuture that are distinc on how the information is store in each file type.",
-    link: "https://github.com/latentdream/bustelo",
-    imgLink: [bitmap, x86, wav],
-    techs: ["C", "Raylib", "Reverse Engineering"],
-  },
-  {
     title: "Flojoy Studio",
     description: "Open-source alternative to LabVIEW & TestStand.",
     link: "https://github.com/flojoy-ai/studio/",
@@ -106,17 +105,18 @@ const projects = [
     techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design"],
   },
   {
+    title: "Bustelo",
+    description: "CLI & GUI tool to generate the representation of how the infomration is store in a file. This tool can allow to speed up the identification of the file format since it exist some general strcuture that are distinc on how the information is store in each file type.",
+    link: "https://github.com/latentdream/bustelo",
+    imgLink: [bitmap, x86, wav],
+    techs: ["C", "Raylib", "Reverse Engineering"],
+  },
+  {
     title: "Shepherd",
     description: "Little project to learn about unsafe Rust and the bindings between C and the language. It works on Unix and Windows platforms.",
     link: "https://github.com/LatentDream/shepherd",
     imgLink: [],
     techs: ["Rust", "C", "Unix", "Windows", "Unsafe Rust", "No Dependencies", "Side Project"],
-  },
-  {
-    title: "Watson AI",
-    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the app if you ask).",
-    imgLink: [watsonImage, watsonImage2],
-    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
   },
   {
     title: "GenAI Hosted Text to Image",
