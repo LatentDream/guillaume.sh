@@ -78,12 +78,6 @@ const internships = [
 
 const projects = [
   {
-    title: "Watson AI",
-    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day. (Not open source, happy to share the app if you ask).",
-    imgLink: [watsonImage, watsonImage2],
-    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
-  },
-  {
     title: "Expresso",
     description: "[WORK IN PROGRESS] Currently learning 3D Rendering from scratch in C. Can load 3D models with the texture and render them in a window. The scene can be explored with a \"FPS\" camera.",
     link: "https://github.com/LatentDream/expresso",
@@ -103,6 +97,13 @@ const projects = [
     link: "https://github.com/flojoy-ai/studio/",
     imgLink: [flojoySequencerImage, flojoyStudioImage, bedOfNailImage],
     techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design"],
+  },
+  {
+    title: "Watson AI",
+    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day.",
+    imgLink: [watsonImage, watsonImage2],
+    link: "https://github.com/LatentDream/watson.ai/",
+    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
   },
   {
     title: "Bustelo",
