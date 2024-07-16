@@ -1,7 +1,6 @@
 import './App.css'
 import { ThemeProvider } from './components/providers/themeProvider'
 import { BrowserRouter, Route, Routes, useRouteError } from 'react-router-dom'
-import Home from './routes/home/home';
 import Cv from './routes/cv/cv';
 import React from 'react';
 
@@ -27,11 +26,6 @@ function App() {
                 element={<Cv />}
                 errorElement={<ErrorBoundary />}
               />,
-              <Route
-                path="/home"
-                element={<Home />}
-                errorElement={<ErrorBoundary />}
-              />
             </Routes>
           </BrowserRouter>
         </React.StrictMode>
