@@ -20,7 +20,7 @@ import watsonImage2 from '../../assets/watson2.png';
 import wav from '../../assets/wav.png';
 import bitmap from '../../assets/bitmap.png';
 import x86 from '../../assets/x86.png';
-import demo from '../../assets/demo.gif';
+// import demo from '../../assets/demo.gif';
 
 
 
@@ -28,7 +28,7 @@ const work = [
   {
     company: "Flojoy",
     start: "January 2024",
-    end: "Now 2024",
+    end: "May 2024",
     loc: "Montreal, Quebec, Canada",
     link: "https://flojoy.ai",
     title: "Software Engineer",
@@ -78,22 +78,22 @@ const internships = [
 
 const projects = [
   {
-    title: "Expresso",
-    description: "[WORK IN PROGRESS] Currently learning 3D Rendering from scratch in C. Can load 3D models with the texture and render them in a window. The scene can be explored with a \"FPS\" camera.",
+    title: "3D Renderer",
+    description: "A old school 3D Renderer from scratch in C. Can load multiple 3D models with the texture and render them in a window. Done as an learning exercices.",
     link: "https://github.com/LatentDream/expresso",
-    imgLink: [demo],
-    techs: ["C"],
-  },
-  {
-    title: "Art Commun",
-    description: "[WORK IN PROGRESS] The primary objective of this project is to explore some stuff. Currently, the backend is done using Rust to handle account states and persistence. And I'm currently exploring WebAssembly and what it is about. I have no idea of the desired output, but stay tuned for updates as the project evolves! For a full dev log, visit ArtCommun.com.",
-    link: "https://artcommun.com",
     imgLink: [],
-    techs: ["Rust", "Postgres", "WebAssembly"],
+    techs: ["C", "3D Pipeline"],
   },
+  // {
+  //   title: "Art Commun",
+  //   description: "[WORK IN PROGRESS] Side project to explore some stuff. Currently, the backend is done using Rust to handle account states and persistence. And I'm currently exploring WebAssembly and what it is about. I have no idea of the desired output, but stay tuned for updates as the project evolves! For a full dev log, visit ArtCommun.com.",
+  //   link: "https://artcommun.com",
+  //   imgLink: [],
+  //   techs: ["Rust", "Postgres", "Redis", "WebAssembly", "Art"],
+  // },
   {
     title: "Flojoy Studio",
-    description: "Open-source alternative to LabVIEW & TestStand.",
+    description: "Open-source alternative to LabVIEW & TestStand. Visual programming to extract hardware data and automate tests for mission critical components such as PCBs, wire harnesses, and battery packs.",
     link: "https://github.com/flojoy-ai/studio/",
     imgLink: [flojoySequencerImage, flojoyStudioImage, bedOfNailImage],
     techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design"],
@@ -111,13 +111,6 @@ const projects = [
     link: "https://github.com/latentdream/bustelo",
     imgLink: [bitmap, x86, wav],
     techs: ["C", "Raylib", "Reverse Engineering"],
-  },
-  {
-    title: "Shepherd",
-    description: "Little project to learn about unsafe Rust and the bindings between C and the language. It works on Unix and Windows platforms.",
-    link: "https://github.com/LatentDream/shepherd",
-    imgLink: [],
-    techs: ["Rust", "C", "Unix", "Windows", "Unsafe Rust", "No Dependencies", "Side Project"],
   },
   {
     title: "GenAI Hosted Text to Image",
@@ -190,7 +183,7 @@ function Cv() {
                 size="icon"
                 asChild
               >
-                <a href={`mailto:guillaume.thibault.98@proton.me`}>
+                <a href={`mailto:email@guillaume.sh`}>
                   <EnvelopeClosedIcon className="size-4" />
                 </a>
               </Button>
@@ -218,8 +211,8 @@ function Cv() {
               </Button>
             </div>
             <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
-              <a href={`mailto:guillaume.thibault.98@proton.me`}>
-                <span className="underline">guillaume.thibault.98@proton.me</span>
+              <a href={`mailto:email@guillaume.sh`}>
+                <span className="underline">email@guillaume.sh</span>
               </a>
               <a href={`https://www.linkedin.com/in/guillaume-thibault/`}>
                 <span className="underline">linkedin.com/in/guillaume-thibault</span>
@@ -350,18 +343,14 @@ function Cv() {
           <div className="flex flex-wrap gap-1">
             <Badge>Python</Badge>
             <Badge>Rust</Badge>
-            <Badge>TypeScript / WebDev</Badge>
+            <Badge>TypeScript</Badge>
             <Badge>SQL</Badge>
-            <Badge>Java</Badge>
             <Badge>C</Badge>
             <Badge>Machine Learning</Badge>
-            <Badge>Deep Learning</Badge>
             <Badge>Data Science</Badge>
             <Badge>Product Design</Badge>
             <Badge>UI/UX</Badge>
-            <Badge>Project Management</Badge>
             <Badge>AWS</Badge>
-            <Badge>Analytical Skills</Badge>
             <Badge>French</Badge>
             <Badge>English</Badge>
           </div>
@@ -369,8 +358,8 @@ function Cv() {
 
         <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
           <h2 className="text-xl font-bold">Projects</h2>
-          <p className="text-pretty"> For a list of projects, please visit: <a href={`https://latentdream.dev`}>
-            <span className="underline">latentdream.dev</span>
+          <p className="text-pretty"> For a list of projects, please visit: <a href={`https://guillaume.sh`}>
+            <span className="underline">guillaume.sh</span>
           </a></p>
         </div>
 
