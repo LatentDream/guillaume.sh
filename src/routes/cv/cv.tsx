@@ -5,22 +5,22 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Section } from "@/components/ui/section";
 import { EnvelopeClosedIcon, GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { ThemeToggle } from "@/components/controls/themeToggle";
-import flojoySequencerImage from '../../assets/flojoy-sequencer.png';
-import flojoyStudioImage from '../../assets/flojoy-studio.png';
-import bedOfNailImage from '../../assets/bed-of-nail.png';
-import PreComputeImage from '../../assets/pre-compute.png';
-import PostComputeImage from '../../assets/post-compute.png';
-import duckietownGif1 from '../../assets/duckietown_1.gif';
-import duckietownGif3 from '../../assets/duckietown_3.gif';
-import duckietownGif4 from '../../assets/duckietown_4.gif';
-import q_demo from '../../assets/q_demo.gif';
-import q_demo2 from '../../assets/q_demo_2.gif';
-import watsonImage from '../../assets/watson.png';
-import watsonImage2 from '../../assets/watson2.png';
-import wav from '../../assets/wav.png';
-import bitmap from '../../assets/bitmap.png';
-import x86 from '../../assets/x86.png';
-// import demo from '../../assets/demo.gif';
+import flojoySequencerImage from '../../assets/cv/flojoy-sequencer.png';
+import flojoyStudioImage from '../../assets/cv/flojoy-studio.png';
+import bedOfNailImage from '../../assets/cv/bed-of-nail.png';
+import PreComputeImage from '../../assets/cv/pre-compute.png';
+import PostComputeImage from '../../assets/cv/post-compute.png';
+import duckietownGif1 from '../../assets/cv/duckietown_1.gif';
+import duckietownGif3 from '../../assets/cv/duckietown_3.gif';
+import duckietownGif4 from '../../assets/cv/duckietown_4.gif';
+import q_demo from '../../assets/cv/q_demo.gif';
+import q_demo2 from '../../assets/cv/q_demo_2.gif';
+import watsonImage from '../../assets/cv/watson.png';
+import watsonImage2 from '../../assets/cv/watson2.png';
+import wav from '../../assets/cv/wav.png';
+import bitmap from '../../assets/cv/bitmap.png';
+import x86 from '../../assets/cv/x86.png';
+// import demo from '../../assets/cv/demo.gif';
 
 
 
