@@ -3,6 +3,7 @@ import { ThemeProvider } from './components/providers/themeProvider'
 import { BrowserRouter, Route, Routes, useRouteError } from 'react-router-dom'
 import Cv from './routes/cv/cv';
 import React from 'react';
+import Landing from './routes/landing/landing';
 
 
 function ErrorBoundary() {
@@ -23,6 +24,11 @@ function App() {
             <Routes>
               <Route
                 path="/"
+                element={<Landing />}
+                errorElement={<ErrorBoundary />}
+              />
+              <Route
+                path="/cv"
                 element={<Cv />}
                 errorElement={<ErrorBoundary />}
               />,
