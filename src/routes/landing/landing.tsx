@@ -2,6 +2,13 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from '@/assets/random/dontlook.jpeg';
 
+/* TODOs:
+ * - Watson.ai: landing page
+ * - hl /  ←→ to switch background image
+ * - Clip the text to the width of the div
+ * - Add a cursor
+ */
+
 const LandingPage: React.FC = () => {
   const [text, setText] = useState('');
   const [selectedOption, setSelectedOption] = useState(0);
@@ -9,10 +16,10 @@ const LandingPage: React.FC = () => {
   const fullText = "  Where to begin ?";
   const navigate = useNavigate();
   const options = [
-    { name: 'Watson AI: an app to record & summarize meetings', path: 'https://github.com/LatentDream/watson.ai', isReferal: true },
-    { name: 'Something cool: Art Commun', path: 'https://artcommun.com', isReferal: true },
-    { name: 'Where I work: Ploomber.io', path: 'https://www.ploomber.io', isReferal: true },
-    { name: 'My Curriculum Vitae', path: '/cv' },
+    { name: 'Watson AI - an app to record & summarize meetings', path: 'https://github.com/LatentDream/watson.ai', isReferal: true },
+    { name: 'Ploomber.io - Where I work', path: 'https://www.ploomber.io', isReferal: true },
+    { name: 'Art Commun - Something cool I\'m working on', path: 'https://artcommun.com', isReferal: true },
+    // { name: 'My Curriculum Vitae', path: '/cv' },
   ];
 
   const specialBackground = {
@@ -120,12 +127,6 @@ const LandingPage: React.FC = () => {
         </div>
 
         <div
-          className="fixed bottom-4 right-5 text-sm cursor-pointer hover:text-tangerine transition-colors duration-300"
-          onClick={() => window.open('https://twitter.com/latentdream', '_blank')}
-        >
-          [<span className="underline">j/k or ↑/↓</span>] To move around
-        </div>
-        <div
           className="fixed bottom-14 left-4 text-sm cursor-pointer hover:text-tangerine transition-colors duration-300"
           onClick={() => window.open('https://twitter.com/latentdream', '_blank')}
         >
@@ -139,9 +140,15 @@ const LandingPage: React.FC = () => {
         </div>
         <div
           className="fixed bottom-4 left-4 text-sm cursor-pointer hover:text-tangerine transition-colors duration-300"
+          onClick={() => window.open('https://twitter.com/latentdream', '_blank')}
+        >
+          [<span className="underline">j/k or ↑/↓</span>] To move around
+        </div>
+        <div
+          className="fixed bottom-4 right-5 text-sm cursor-pointer hover:text-tangerine transition-colors duration-300"
           onClick={() => navigate('/cv')}
         >
-          [<span className="underline">?</span>] To know more about the author
+          Who made this [<span className="underline">?</span>] 
         </div>
       </div>
     </div>
