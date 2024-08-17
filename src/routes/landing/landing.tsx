@@ -1,26 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const LandingPage: React.FC = () => {
   const [text, setText] = useState('');
   const [selectedOption, setSelectedOption] = useState(0);
-  const fullText = "Choose an option to begin...";
+  const [showCursor, setShowCursor] = useState(true);
+  const fullText = "  Choose an option to begin ";
   const navigate = useNavigate();
   const options = [
     { name: 'Watson.ai', path: '/watson-ai' },
     { name: 'CV', path: '/cv' },
   ];
 
-  useEffect(() => {
+  const typeText = useCallback(() => {
     let index = 0;
     const intervalId = setInterval(() => {
-      setText(fullText.slice(0, index));
+      setText((prevText) => {
+        if (index >= fullText.length) {
+          clearInterval(intervalId);
+          return prevText;
+        }
+        return prevText + fullText[index];
+      });
       index++;
-      if (index > fullText.length) clearInterval(intervalId);
     }, 100);
 
     return () => clearInterval(intervalId);
+  }, [fullText]);
+
+  useEffect(() => {
+    const cursorIntervalId = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+
+    return () => clearInterval(cursorIntervalId);
   }, []);
+
+  useEffect(() => {
+    return typeText();
+  }, [typeText]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -36,6 +54,13 @@ const LandingPage: React.FC = () => {
         case 'Enter':
           navigate(options[selectedOption].path);
           break;
+        case 'Escape':
+          // Reset selection when Esc is pressed
+          setSelectedOption(-1);
+          break;
+        case '?':
+          navigate('/cv');
+          break;
       }
     };
 
@@ -47,20 +72,21 @@ const LandingPage: React.FC = () => {
     <div className="min-h-screen bg-black text-green-500 flex flex-col justify-between p-8 font-mono">
       <div className="flex-grow flex flex-col justify-center items-center">
         <div className="bg-black border border-green-500 p-8 rounded-lg shadow-lg max-w-2xl w-full">
-          <h1 className="text-2xl md:text-4xl font-bold mb-8 text-center">
+          <h1 className="text-2xl md:text-4xl font-bold mb-8 text-left whitespace-nowrap">
             {text}
-            <span className="animate-blink">_</span>
+            {showCursor && <span className="animate-blink">█</span>}
           </h1>
-          
+
           <nav className="space-y-4">
             {options.map((option, index) => (
-              <div 
+              <div
                 key={option.name}
-                className="text-xl cursor-pointer hover:text-green-300 transition-colors duration-300"
+                className={`text-xl cursor-pointer transition-colors duration-300 ${selectedOption === index ? 'text-green-300' : 'hover:text-green-300'
+                  }`}
                 onClick={() => navigate(option.path)}
                 onMouseEnter={() => setSelectedOption(index)}
               >
-                <span className={selectedOption === index ? 'text-green-300' : ''}>
+                <span>
                   {selectedOption === index ? '> ' : '  '}
                   {option.name}
                 </span>
@@ -70,11 +96,11 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
 
-      <div 
+      <div
         className="fixed bottom-4 left-4 text-sm cursor-pointer hover:text-green-300 transition-colors duration-300"
-        onClick={() => navigate('/esp')}
+        onClick={() => navigate('/cv')}
       >
-        [ESP]
+        [Press: <span className="underline">?</span>] to know more about the author
       </div>
     </div>
   );
