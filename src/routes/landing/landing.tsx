@@ -44,28 +44,38 @@ const LandingPage: React.FC = () => {
   }, [selectedOption, navigate, options]);
 
   return (
-    <div className="min-h-screen bg-primary flex flex-col justify-center items-center p-4">
-      <h1 className="text-4xl md:text-6xl font-bold text-secondary mb-16 text-center">
-        {text}
-        <span className="animate-blink">|</span>
-      </h1>
-      
-      <nav className="space-y-4 text-center">
-        {options.map((option, index) => (
-          <div 
-            key={option.name}
-            className="text-2xl text-secondary hover:text-popover transition-colors duration-300 relative group cursor-pointer"
-            onClick={() => navigate(option.path)}
-            onMouseEnter={() => setSelectedOption(index)}
-          >
-            <span className={selectedOption === index ? 'text-popover' : ''}>
-              {selectedOption === index && '→ '}
-              {option.name}
-            </span>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300"></span>
-          </div>
-        ))}
-      </nav>
+    <div className="min-h-screen bg-black text-green-500 flex flex-col justify-between p-8 font-mono">
+      <div className="flex-grow flex flex-col justify-center items-center">
+        <div className="bg-black border border-green-500 p-8 rounded-lg shadow-lg max-w-2xl w-full">
+          <h1 className="text-2xl md:text-4xl font-bold mb-8 text-center">
+            {text}
+            <span className="animate-blink">_</span>
+          </h1>
+          
+          <nav className="space-y-4">
+            {options.map((option, index) => (
+              <div 
+                key={option.name}
+                className="text-xl cursor-pointer hover:text-green-300 transition-colors duration-300"
+                onClick={() => navigate(option.path)}
+                onMouseEnter={() => setSelectedOption(index)}
+              >
+                <span className={selectedOption === index ? 'text-green-300' : ''}>
+                  {selectedOption === index ? '> ' : '  '}
+                  {option.name}
+                </span>
+              </div>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      <div 
+        className="fixed bottom-4 left-4 text-sm cursor-pointer hover:text-green-300 transition-colors duration-300"
+        onClick={() => navigate('/esp')}
+      >
+        [ESP]
+      </div>
     </div>
   );
 };
