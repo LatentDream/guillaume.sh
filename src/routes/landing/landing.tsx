@@ -98,16 +98,15 @@ const LandingPage: React.FC = () => {
   return (
     <Background>
 
-      <div className="flex-grow flex flex-col justify-center items-center">
-        { /* following div should grow with text */}
-        <div className="border bg-pink border-primary p-8 rounded-lg shadow-lg max-w-2xl w-fit">
-          <h1 className="text-xl md:text-xl font-bold mb-8 text-left whitespace-nowrap">
-            {text}
-            {showCursor && <span className="animate-blink">█</span>}
-          </h1>
+      <div className="border bg-pink border-primary p-8 rounded-lg shadow-lg max-w-2xl w-full">
+        <h1 className="text-xl md:text-xl font-bold mb-8 text-left whitespace-nowrap">
+          {text}
+          {showCursor && <span className="animate-blink">█</span>}
+        </h1>
 
+        <div className={`grow-transition ${displayOptions ? 'show' : ''}`}>
           {displayOptions && (
-            <nav className="space-y-4 animate-grow-options">
+            <nav className="space-y-4">
               {options.map((option, index) => (
                 <div
                   key={option.name}

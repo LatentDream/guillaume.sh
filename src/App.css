@@ -45,6 +45,14 @@
   }
 }
 
-.animate-grow-options {
-  animation: growOptions 0.5s ease-out;
+.grow-transition {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 5s ease-out, opacity 1s ease-out;
+}
+
+.grow-transition.show {
+  max-height: 1000px;
+  opacity: 1;
 }
