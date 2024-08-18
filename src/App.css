@@ -34,32 +34,17 @@
 
 @page { size: auto;  margin: 0mm; }
 
-/* @keyframes growDiv { */
-/*   from { */
-/*     transform: scale(0.95); */
-/*   } */
-/*   to { */
-/*     transform: scale(1); */
-/*   } */
-/* } */
-
-@keyframes fadeInOptions {
+@keyframes growOptions {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translate(0.9);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(1);
   }
 }
 
-.animate-grow-div {
-  /* animation: growDiv 0.7s ease-out; */
-  /* transition: all .5s linear; */
-  transition:height 1s ease-in-out;
-}
-
-.animate-fade-in-options {
-  animation: fadeInOptions 0.5s ease-out;
+.animate-grow-options {
+  animation: growOptions 0.5s ease-out;
 }

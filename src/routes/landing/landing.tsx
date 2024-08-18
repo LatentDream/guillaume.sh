@@ -9,13 +9,14 @@ import dontlookImage from '@/assets/random/dontlook.jpeg';
  * - Watson.ai: landing page
  * - hl /  ←→ to switch background image
  * - Clip the text to the width of the div
- * - Add a cursor
+ * - Animation
  */
 
 const LandingPage: React.FC = () => {
   const [text, setText] = useState('');
   const [selectedOption, setSelectedOption] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
+  const [displayOptions, setDisplayOptions] = useState(false);
   const fullText = "  Where to begin ?";
   const navigate = useNavigate();
   const options = [
@@ -39,6 +40,7 @@ const LandingPage: React.FC = () => {
       setText((prevText) => {
         if (index >= fullText.length) {
           clearInterval(intervalId);
+          setDisplayOptions(true);
           return prevText;
         }
         return prevText + fullText[index];
@@ -115,6 +117,13 @@ const LandingPage: React.FC = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedOption, navigate, options]);
 
+  useEffect(() => {
+    vibes.forEach(vibe => {
+      const img = new Image();
+      img.src = vibe.backgroundImage.replace('url(', '').replace(')', '');
+    });
+  }, []);
+
   return (
     <div className={`min-h-screen text-black flex items-center justify-center p-8 font-mono ${vibes[vibeIdx].color}`}>
       <div
@@ -126,6 +135,7 @@ const LandingPage: React.FC = () => {
           backgroundRepeat: 'no-repeat',
           height: '70vh',
           width: '70vw',
+          transition: 'background-image 0.5s ease-in-out, background-color 0.5s ease-in-out',
         }}     >
         <div className="flex-grow flex flex-col justify-center items-center">
           <div className="border bg-pink border-primary p-8 rounded-lg shadow-lg max-w-2xl w-full">
@@ -134,22 +144,24 @@ const LandingPage: React.FC = () => {
               {showCursor && <span className="animate-blink">█</span>}
             </h1>
 
-            <nav className="space-y-4">
-              {options.map((option, index) => (
-                <div
-                  key={option.name}
-                  className={`text-xl cursor-pointer transition-colors duration-300 ${selectedOption === index ? 'text-tangerine' : 'hover:text-tangerine'
-                    }`}
-                  onClick={() => navigate(option.path)}
-                  onMouseEnter={() => setSelectedOption(index)}
-                >
-                  <span>
-                    {selectedOption === index ? '> ' : '  '}
-                    {option.name}
-                  </span>
-                </div>
-              ))}
-            </nav>
+            {displayOptions && (
+              <nav className="space-y-4 animate-grow-options">
+                {options.map((option, index) => (
+                  <div
+                    key={option.name}
+                    className={`text-xl cursor-pointer transition-colors duration-300 ${selectedOption === index ? 'text-tangerine' : 'hover:text-tangerine'
+                      }`}
+                    onClick={() => navigate(option.path)}
+                    onMouseEnter={() => setSelectedOption(index)}
+                  >
+                    <span>
+                      {selectedOption === index ? '> ' : '  '}
+                      {option.name}
+                    </span>
+                  </div>
+                ))}
+              </nav>
+            )}
           </div>
         </div>
 
@@ -167,7 +179,7 @@ const LandingPage: React.FC = () => {
         <div
           className="fixed bottom-4 left-4 text-sm cursor-pointer hover:text-tangerine transition-colors duration-300"
         >
-          [<span className="underline">h/l or ←/→</span>] To change the vibe of the place
+          [<span className="underline">h/l or ←/→</span>]To change the vibe of the place (Comming soon!)
         </div>
 
         <div
