@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes, useRouteError } from 'react-router-dom'
 import Cv from './routes/cv/cv';
 import React from 'react';
 import Landing from './routes/landing/landing';
-import Watson from './routes/watson/watson';
+import Watson from './routes/watson/Watson';
 
 
 function ErrorBoundary() {
