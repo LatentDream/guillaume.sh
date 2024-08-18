@@ -1,4 +1,4 @@
-import ControlToolTip from './components/controlToolTip';
+import ControlToolTip from './components/ControlToolTip';
 import Background from './components/Background';
 import { LandingThemeProvider } from './components/LandingThemeContext';
 import Navigator from './components/Navigator';
@@ -6,8 +6,8 @@ import Navigator from './components/Navigator';
 const LandingPage: React.FC = () => {
 
   const options = [
-    { name: 'Watson AI - an app to record & summarize meetings', path: '/watson', isReferal: false },
-    { name: 'Ploomber.io - Where I work', path: 'https://www.ploomber.io', isReferal: true },
+    { name: 'Watson AI - App I made to record & summarize meetings', path: '/watson', isReferal: false },
+    { name: 'Ploomber.io - Current work, tools to streamline Data Science', path: 'https://www.ploomber.io', isReferal: true },
     { name: 'Art Commun - Something cool I\'m working on', path: 'https://artcommun.com', isReferal: true },
   ];
 
