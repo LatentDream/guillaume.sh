@@ -6,7 +6,7 @@ import Navigator from './components/Navigator';
 const LandingPage: React.FC = () => {
 
   const options = [
-    { name: 'Watson AI - an app to record & summarize meetings', path: 'https://github.com/LatentDream/watson.ai', isReferal: true },
+    { name: 'Watson AI - an app to record & summarize meetings', path: '/watson', isReferal: false },
     { name: 'Ploomber.io - Where I work', path: 'https://www.ploomber.io', isReferal: true },
     { name: 'Art Commun - Something cool I\'m working on', path: 'https://artcommun.com', isReferal: true },
   ];

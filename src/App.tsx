@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes, useRouteError } from 'react-router-dom'
 import Cv from './routes/cv/cv';
 import React from 'react';
 import Landing from './routes/landing/landing';
+import Watson from './routes/watson/watson';
 
 
 function ErrorBoundary() {
@@ -32,6 +33,11 @@ function App() {
                 element={<Cv />}
                 errorElement={<ErrorBoundary />}
               />,
+              <Route
+                path="/watson"
+                element={<Watson />}
+                errorElement={<ErrorBoundary />}
+              />
             </Routes>
           </BrowserRouter>
         </React.StrictMode>
