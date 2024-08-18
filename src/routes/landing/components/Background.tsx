@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import dontlookImage from '@/assets/random/dontlook.jpeg';
-import universeImage from '@/assets/random/universe.jpeg';
-import { useLandingTheme } from './LandingThemeContext';
+// import universeImage from '@/assets/random/universe.jpeg';
+import blueImage from '@/assets/random/blue.jpeg';
+import { Theme, useLandingTheme } from './LandingThemeContext';
 interface BackgroundProps {
   children?: React.ReactNode;
 }
@@ -9,9 +10,10 @@ interface BackgroundProps {
 const Background: React.FC<BackgroundProps> = (props) => {
   const { setTheme } = useLandingTheme();
 
-  const backgrounds = [
-    { backgroundImage: `url(${dontlookImage})`, color: 'bg-[#ffefe5]', credz: "https://www.instagram.com/kou.7684" },
-    { backgroundImage: `url(${universeImage})`, color: 'bg-[#e1ccac]' },
+  const backgrounds: { backgroundImage: string, theme: Theme }[] = [
+    { backgroundImage: `url(${dontlookImage})`, theme: { bg: 'bg-[#ffefe5]', highlight: 'text-[#ffefe5]' } },
+    // { backgroundImage: `url(${universeImage})`, theme: { bg: 'bg-[#e1ccac]', highlight: 'text-[#e1ccac]' } },
+    { backgroundImage: `url(${blueImage})`, theme: { bg: 'bg-[#de8faf]', highlight: 'text-powder' } },
   ];
   const [backgroundIdx, setBackgroundIdx] = useState(0);
 
@@ -34,7 +36,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
   }, []);
 
   useEffect(() => {
-    setTheme(backgrounds[backgroundIdx].color);
+    setTheme(backgrounds[backgroundIdx].theme);
   }, [backgroundIdx, setTheme]);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
   }, []);
 
   return (
-    <div className={`min-h-screen text-black flex items-center justify-center p-8 font-mono ${backgrounds[backgroundIdx].color}`}>
+    <div className={`min-h-screen text-black flex items-center justify-center p-8 font-mono ${backgrounds[backgroundIdx].theme.bg}`}>
       <div
         className="min-h-[85vh] flex flex-col justify-between p-8 font-mono"
         style={{

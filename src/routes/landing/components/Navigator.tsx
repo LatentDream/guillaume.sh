@@ -110,7 +110,7 @@ const Navigator: React.FC<NavigatorProps> = ({ title, options }) => {
             {options.map((option, index) => (
               <div
                 key={option.name}
-                className={`text-md cursor-pointer transition-colors duration-300 ${selectedOption === index ? 'text-tangerine' : 'hover:text-tangerine'
+                className={`text-md cursor-pointer transition-colors duration-300 ${selectedOption === index ? theme.highlight : `hover:${theme.highlight}`
                   }`}
                 onClick={() => navigate(option.path)}
                 onMouseEnter={() => setSelectedOption(index)}

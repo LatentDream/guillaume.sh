@@ -1,15 +1,17 @@
 // BackgroundContext.tsx
 import React, { createContext, useContext, ReactNode } from 'react';
 
+export type Theme = { bg: string, highlight: string };
+
 interface LandingThemeContextType {
-  theme: string;
-  setTheme: (newColor: string) => void;
+  theme: Theme;
+  setTheme: (newColor: Theme) => void;
 }
 
 const LandingThemeContext = createContext<LandingThemeContextType | undefined>(undefined);
 
 export const LandingThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = React.useState<string>('bg-pink');
+  const [theme, setTheme] = React.useState<Theme>({ bg: '#ffefe5', highlight: "tangerine" });
 
   return (
     <LandingThemeContext.Provider value={{ theme, setTheme }}>
