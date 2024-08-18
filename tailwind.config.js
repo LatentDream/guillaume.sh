@@ -63,9 +63,6 @@ module.exports = {
         powder: {
           DEFAULT: "hsl(var(--powder-blue))",
         },
-        pink: {
-          DEFAULT: "hsl(var(--pink))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",

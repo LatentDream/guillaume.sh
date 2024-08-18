@@ -13,7 +13,7 @@ const ControlToolTip: React.FC = () => {
       <div
         className="fixed bottom-4 left-4 text-sm cursor-pointer hover:text-tangerine transition-colors duration-300"
       >
-        [<span className="underline">←/→ or h/l </span>]To change the vibe of the place (Comming soon!)
+        [<span className="underline">←/→ or h/l </span>]To change the vibe of the place
       </div>
 
       <div

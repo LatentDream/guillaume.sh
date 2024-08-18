@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLandingTheme } from './LandingThemeContext';
 
 type NavigatorProps = {
   title: string;
   options: { name: string; path: string; isReferal: boolean }[];
 };
 
-const Navigator: React.FC<NavigatorProps> = ({title, options}) => {
+const Navigator: React.FC<NavigatorProps> = ({ title, options }) => {
   const [text, setText] = useState('');
   const [selectedOption, setSelectedOption] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
   const [displayOptions, setDisplayOptions] = useState(false);
-  const fullText = title;//"  Where to begin ?";
+  const { theme } = useLandingTheme();
 
   const navigate = useNavigate();
 
@@ -19,18 +20,18 @@ const Navigator: React.FC<NavigatorProps> = ({title, options}) => {
     let index = 0;
     const intervalId = setInterval(() => {
       setText((prevText) => {
-        if (index >= fullText.length) {
+        if (index >= title.length) {
           clearInterval(intervalId);
           setDisplayOptions(true);
           return prevText;
         }
-        return prevText + fullText[index];
+        return prevText + title[index];
       });
       index++;
     }, 100);
 
     return () => clearInterval(intervalId);
-  }, [fullText]);
+  }, [title]);
 
   useEffect(() => {
     const cursorIntervalId = setInterval(() => {
@@ -89,7 +90,15 @@ const Navigator: React.FC<NavigatorProps> = ({title, options}) => {
   }, [selectedOption, navigate, options]);
 
   return (
-    <div className="border border-primary p-8 rounded-lg shadow-lg max-w-2xl w-full">
+    <div className={`
+      border border-primary p-8 rounded-lg shadow-lg max-w-2xl w-full
+      backdrop-blur-md bg-opacity-70
+      ${theme}
+      before:content-[''] before:absolute before:inset-0 before:rounded-lg
+      before:bg-gradient-to-br before:from-white/10 before:to-transparent
+      before:pointer-events-none before:z-10
+      relative overflow-hidden
+    `}>
       <h1 className="text-xl md:text-xl font-bold mb-8 text-left whitespace-nowrap">
         {text}
         {showCursor && <span className="animate-blink">█</span>}

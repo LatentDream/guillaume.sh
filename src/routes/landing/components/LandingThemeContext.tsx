@@ -2,20 +2,17 @@
 import React, { createContext, useContext, ReactNode } from 'react';
 
 interface LandingThemeContextType {
-  color: string;
+  theme: string;
   setTheme: (newColor: string) => void;
 }
 
 const LandingThemeContext = createContext<LandingThemeContextType | undefined>(undefined);
 
 export const LandingThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [color, setColor] = React.useState<string>('bg-pink');
-
-  // Update color here as needed, for example with a function
-  const setTheme = (newColor: string) => setColor(newColor);
+  const [theme, setTheme] = React.useState<string>('bg-pink');
 
   return (
-    <LandingThemeContext.Provider value={{ color, setTheme }}>
+    <LandingThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </LandingThemeContext.Provider>
   );

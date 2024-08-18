@@ -10,7 +10,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
   const { setTheme } = useLandingTheme();
 
   const backgrounds = [
-    { backgroundImage: `url(${dontlookImage})`, color: 'bg-pink', credz: "https://www.instagram.com/kou.7684" },
+    { backgroundImage: `url(${dontlookImage})`, color: 'bg-[#ffefe5]', credz: "https://www.instagram.com/kou.7684" },
     { backgroundImage: `url(${universeImage})`, color: 'bg-[#e1ccac]' },
   ];
   const [backgroundIdx, setBackgroundIdx] = useState(0);
