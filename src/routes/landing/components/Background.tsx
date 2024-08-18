@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import dontlookImage from '@/assets/random/dontlook.jpeg';
-// import universeImage from '@/assets/random/universe.jpeg';
-// import lainpatternImage from '@/assets/random/lainpattern.gif';
-// import itslifeImage from '@/assets/random/itslife.png';
-
+import universeImage from '@/assets/random/universe.jpeg';
+import { useLandingTheme } from './LandingThemeContext';
 interface BackgroundProps {
   children?: React.ReactNode;
 }
 
 const Background: React.FC<BackgroundProps> = (props) => {
+  const { setTheme } = useLandingTheme();
 
   const backgrounds = [
-    { backgroundImage: `url(${dontlookImage})`, color: 'bg-pink' },
-    // { backgroundImage: `url(${universeImage})`, color: 'bg-primary' },
-    // { backgroundImage: `url(${lainpatternImage})`, color: 'bg-secondary' },
-    // { backgroundImage: `url(${itslifeImage})`, color: 'bg-tangerine' },
-  ]
+    { backgroundImage: `url(${dontlookImage})`, color: 'bg-pink', credz: "https://www.instagram.com/kou.7684" },
+    { backgroundImage: `url(${universeImage})`, color: 'bg-[#e1ccac]' },
+  ];
   const [backgroundIdx, setBackgroundIdx] = useState(0);
 
   useEffect(() => {
@@ -37,6 +34,10 @@ const Background: React.FC<BackgroundProps> = (props) => {
   }, []);
 
   useEffect(() => {
+    setTheme(backgrounds[backgroundIdx].color);
+  }, [backgroundIdx, setTheme]);
+
+  useEffect(() => {
     // Preload images
     backgrounds.forEach(background => {
       const img = new Image();
@@ -56,9 +57,10 @@ const Background: React.FC<BackgroundProps> = (props) => {
           height: '85vh',
           width: '85vw',
           transition: 'background-image 0.5s ease-in-out, background-color 0.5s ease-in-out',
-        }}     >
+        }}
+      >
         <div className="flex-grow flex flex-col justify-center items-center">
-          { props.children }
+          {props.children}
         </div>
       </div>
     </div>
