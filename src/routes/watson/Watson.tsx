@@ -4,6 +4,7 @@ import { FaGithub } from 'react-icons/fa';
 import watsonProductImage from '@/assets/watson/watsonDemo.png';
 import watsonIconImage from '@/assets/watson/icon.png';
 import DownloadButton, { Distro } from './components/DownloadWatson';
+import backgroundImage from '@/assets/watson/background.jpeg';
 
 const Watson: React.FC = () => {
     const [stars, setStars] = useState<number | null>(null);
@@ -27,7 +28,7 @@ const Watson: React.FC = () => {
     }, []);
 
     return (
-        <div className="min-h-screen flex flex-col p-4 md:p-8 overflow-hidden">
+        <div className="min-h-screen flex flex-col p-4 md:p-8 overflow-hidden" style = {{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <header className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-12">
                 <div className="flex items-center space-x-2 mb-4 md:mb-0">
                     <img className='w-12' src={watsonIconImage} alt="Watson Icon" />
