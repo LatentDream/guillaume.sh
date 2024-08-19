@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Section } from "@/components/ui/section";
-import { EnvelopeClosedIcon, GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { CalendarIcon, EnvelopeClosedIcon, GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { ThemeToggle } from "@/components/controls/themeToggle";
 import flojoySequencerImage from '../../assets/cv/flojoy-sequencer.png';
 import flojoyStudioImage from '../../assets/cv/flojoy-studio.png';
@@ -25,6 +25,28 @@ import x86 from '../../assets/cv/x86.png';
 
 
 const work = [
+  {
+    company: "Contractor - Ploomber.io (YC W22)",
+    start: "August 2024",
+    end: "Ongoing",
+    loc: "",
+    link: "https://ploomber.io",
+    title: "Software Engineer",
+    description: "Working on tools to streamline Data Science.",
+    badges: [],
+    notes: []
+  },
+  {
+    company: "Contractor - Astrovault.io",
+    start: "June 2024",
+    end: "August 2024",
+    loc: "",
+    link: "https://astrovault.io",
+    title: "Rust / React Developer for Solana Blockchain",
+    description: "Developing the Port of Astrovault for the Solana blockchain, with www.webisoft.com.",
+    badges: [],
+    notes: []
+  },
   {
     company: "Flojoy",
     start: "January 2024",
@@ -55,7 +77,7 @@ const work = [
     link: "https://tesla.com",
     title: "Software Engineer Intern",
     description: "Reverse engineering of a Product Data Modeller (3D Experience) to programmatically access data from a Java GRPC microservice. Refactoring of a Java microservice by simplifying code and removing code duplication. Smoke-test to automatically test microservice on deployment in Python / Pytest / Github action / Helm.",
-    badges: ["Java", "Reverse Engineering Software", "Testing", "Python", "GRPC"],
+    badges: ["Java", "Reverse Engineering Software", "Testing", "Python"],
     notes: ["Supervisor & Mentor: Manu Radhakrishna - Sr Staff Software Eng."]
   },
 ]
@@ -185,6 +207,16 @@ function Cv() {
               >
                 <a href={`mailto:email@guillaume.sh`}>
                   <EnvelopeClosedIcon className="size-4" />
+                </a>
+              </Button>
+              <Button
+                className="size-8"
+                variant="outline"
+                size="icon"
+                asChild
+              >
+                <a href="https://cal.com/guillaume-thibault/30min">
+                  <CalendarIcon className="size-4" />
                 </a>
               </Button>
               <Button
