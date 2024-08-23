@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import dontlookImage from '@/assets/random/dontlook.jpeg';
 import blueImage from '@/assets/random/blue.jpeg';
+import summerImage from '@/assets/random/summer.jpeg';
 import { Theme, useLandingTheme } from './LandingThemeContext';
 interface BackgroundProps {
   children?: React.ReactNode;
@@ -10,6 +11,7 @@ const Background: React.FC<BackgroundProps> = (props) => {
   const { setTheme } = useLandingTheme();
 
   const backgrounds: { backgroundImage: string, theme: Theme }[] = [
+    { backgroundImage: `url(${summerImage})`, theme: { bg: 'bg-[#b2b6a7]', highlight: 'text-platinum' } },
     { backgroundImage: `url(${blueImage})`, theme: { bg: 'bg-[#de8faf]', highlight: 'text-powder' } },
     { backgroundImage: `url(${dontlookImage})`, theme: { bg: 'bg-[#ffefe5]', highlight: 'text-[#ffefe5]' } },
   ];
