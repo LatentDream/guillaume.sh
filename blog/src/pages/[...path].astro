@@ -1,5 +1,5 @@
 ---
-import ReactApp from '../components/ReactApp';
+import App from '../react/App';
 
 export function getStaticPaths() {
   return [
@@ -19,6 +19,6 @@ const { path } = Astro.params;
     <title>My Astro + React App</title>
   </head>
   <body>
-    <ReactApp client:load location={Astro.url.pathname} />
+    <App client:load location={Astro.url.pathname} />
   </body>
 </html>

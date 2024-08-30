@@ -23,7 +23,7 @@ const Router = ({ children, location }) => {
     return <StaticRouter location={location}>{children}</StaticRouter>;
 };
 
-export default function ReactApp({ location }) {
+export default function App({ location }) {
     return (
         <Router location={location}>
             <Routes>

@@ -1,14 +1,15 @@
 ---
-import ReactApp from '../components/ReactApp';
+import App from '../react/App';
+import { SITE_DESCRIPTION } from '../consts';
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>My Astro + React App</title>
+    <title>{SITE_DESCRIPTION}</title>
   </head>
   <body>
-    <ReactApp client:load location={Astro.url.pathname} />
+    <App client:load location={Astro.url.pathname} />
   </body>
 </html>
