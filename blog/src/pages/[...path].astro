@@ -1,5 +1,15 @@
 ---
 import ReactApp from '../components/ReactApp';
+
+export function getStaticPaths() {
+  return [
+    { params: { path: undefined } },  // Matches '/'
+    { params: { path: 'second' } },   // Matches '/second'
+    // Add other paths that should be handled by React
+  ];
+}
+
+const { path } = Astro.params;
 ---
 
 <html lang="en">
