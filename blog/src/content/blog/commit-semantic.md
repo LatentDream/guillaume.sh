@@ -12,9 +12,8 @@ Semantic commits are a standardized way of writing commit messages that provide 
 > Format: `<type>[(scope)]: <description>`
 > - `(scope)` has optional
 
-#### Example
 
-```
+```txt title="Example" {4}
     +--> What it affects
     |
     v--------------v
