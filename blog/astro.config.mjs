@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import react from '@astrojs/react'
+import path from 'path';
 
 import tailwind from '@astrojs/tailwind'
 
@@ -25,4 +26,11 @@ export default defineConfig({
     client: './client',
   },
 
+  vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve('./src/'),
+      },
+    },
+  },
 })
