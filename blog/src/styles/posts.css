@@ -1,0 +1,88 @@
+:root {
+  --color-blue: 57 97 127; /* RGB values without commas */
+}
+
+/* Styling titles */
+[data-rehype-pretty-code-title] {
+  background-color: #4b5563;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+  color: #eee;
+  padding: 0.5rem;
+  /* text-align: center; */
+  margin-bottom: -0.2rem;
+  margin-top: -0.2rem;
+  font-size: 0.675rem;
+}
+ 
+/* Styling captions */
+[data-rehype-pretty-code-caption] {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+ 
+/* Styling highlighted blocks */
+[data-highlighted-line],
+[data-highlighted-chars] {
+  background-color: rgb(var(--color-blue) / 0.4);
+}
+ 
+[data-highlighted-line] {
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: rgb(var(--color-blue) / var(--tw-border-opacity));
+}
+pre {
+  border-radius: 0.4rem;
+}
+ 
+/* Styling line numbers */
+[data-rehype-pretty-code-fragment] pre > code {
+  display: grid;
+  counter-reset: line;
+}
+ 
+[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+/* Neaten everything up */
+[data-rehype-pretty-code-fragment] pre {
+  padding-left: 0;
+  padding-right: 0;
+  overflow-x: scroll;
+}
+ 
+[data-line] {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+ 
+[data-rehype-pretty-code-title] + pre {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+/* Light/dark themes*/
+@media (prefers-color-scheme: dark) {
+  *[data-theme="light"] {
+    display: none;
+  }
+}
+ 
+@media (prefers-color-scheme: light) {
+  *[data-theme="dark"] {
+    display: none;
+  }
+}
+ 
+.vitesse-dark {
+  background-color: #eee !important;
+}
