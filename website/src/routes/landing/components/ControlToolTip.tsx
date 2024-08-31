@@ -32,7 +32,7 @@ const ControlToolTip: React.FC = () => {
         className="fixed bottom-4 right-5 text-sm cursor-pointer hover:text-muted-foreground transition-colors duration-300"
         onClick={() => navigate('/cv')}
       >
-        Who made this [<span className="underline">?</span>]
+        About me [<span className="underline">?</span>]
       </div>
     </>
   );

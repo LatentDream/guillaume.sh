@@ -8,7 +8,7 @@ const LandingPage: React.FC = () => {
   const options = [
     { name: 'Watson AI - App I made to record & summarize meetings', path: '/watson', isReferal: false },
     { name: 'Ploomber.io - Current work, tools to streamline Data Science', path: 'https://www.ploomber.io', isReferal: true },
-    { name: 'Art Commun - Something cool I\'m working on', path: 'https://artcommun.com', isReferal: true },
+    { name: 'Blog & Ressources - Work in progress', path: 'https://latentdream.dev', isReferal: true },
   ];
 
   return (
