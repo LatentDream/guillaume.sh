@@ -3,7 +3,7 @@ title: 'docs(git): Semantic Commit'
 description: 'Specification for adding human and machine readable meaning to commit messages'
 pubDate: 'Aug 30 2024'
 heroImage: '/blog-placeholder-3.jpg'
-tags: ['ressources', 'git']
+tags: ['resources', 'git']
 ---
 # Semantic Commit Messages
 
