@@ -31,6 +31,7 @@ feat(auth): Add auth0
 - `fix`: bug fix for the user, not a fix to a build script
 - `docs`: changes to the documentation
 - `perf`: optimization
+- `ci`: modifying ci/cd pipeline
 - `refactor`: refactoring production code, eg. renaming a variable
 - `style`: formatting, missing semi colons, etc; (no production code change)
 - `test`: adding missing tests, refactoring tests; (no production code change)
