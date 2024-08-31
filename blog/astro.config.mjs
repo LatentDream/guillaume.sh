@@ -7,7 +7,7 @@ import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://latentdream.dev',
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     rehypePlugins: [[rehypePrettyCode, { theme: "vitesse-dark" }]],
