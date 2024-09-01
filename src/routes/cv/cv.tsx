@@ -1,0 +1,460 @@
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Section } from "@/components/ui/section";
+import { CalendarIcon, EnvelopeClosedIcon, GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { ThemeToggle } from "@/components/controls/themeToggle";
+import flojoySequencerImage from '../../assets/cv/flojoy-sequencer.png';
+import flojoyStudioImage from '../../assets/cv/flojoy-studio.png';
+import bedOfNailImage from '../../assets/cv/bed-of-nail.png';
+import PreComputeImage from '../../assets/cv/pre-compute.png';
+import PostComputeImage from '../../assets/cv/post-compute.png';
+import duckietownGif1 from '../../assets/cv/duckietown_1.gif';
+import duckietownGif3 from '../../assets/cv/duckietown_3.gif';
+import duckietownGif4 from '../../assets/cv/duckietown_4.gif';
+import q_demo from '../../assets/cv/q_demo.gif';
+import q_demo2 from '../../assets/cv/q_demo_2.gif';
+import watsonImage from '../../assets/cv/watson.png';
+import watsonImage2 from '../../assets/cv/watson2.png';
+import wav from '../../assets/cv/wav.png';
+import bitmap from '../../assets/cv/bitmap.png';
+import x86 from '../../assets/cv/x86.png';
+// import demo from '../../assets/cv/demo.gif';
+
+
+
+const work = [
+  {
+    company: "Contractor - Ploomber.io (YC W22)",
+    start: "August 2024",
+    end: "Ongoing",
+    loc: "",
+    link: "https://ploomber.io",
+    title: "Software Engineer",
+    description: "Working on tools to streamline Data Science.",
+    badges: [],
+    notes: []
+  },
+  {
+    company: "Contractor - Astrovault.io",
+    start: "June 2024",
+    end: "August 2024",
+    loc: "",
+    link: "https://astrovault.io",
+    title: "Rust / React Developer for Solana Blockchain",
+    description: "Developing the Port of Astrovault for the Solana blockchain, with www.webisoft.com.",
+    badges: [],
+    notes: []
+  },
+  {
+    company: "Flojoy",
+    start: "January 2024",
+    end: "May 2024",
+    loc: "Montreal, Quebec, Canada",
+    link: "https://flojoy.ai",
+    title: "Software Engineer",
+    description: "Originally hired as a Hardware and ML Engineer to extend the capabilities of Flojoy Studio (an open-source alternative to LabVIEW), I quickly transitioned into the role of Product Designer and Full Stack Engineer when the company pivoted to an adjacent market, tackling Test and Measurement automation for PCB board testing. Within 3 months, we developed a test sequencer for manufacturing and engineering (desktop application for developing and running tests, along with a cloud solution for managing and visualizing the tests and data.)",
+    badges: ["Product Design", "Typescript", "React", "Python", "C", "Project Management", "PostgresSQL"],
+    notes: ["Traction: 2500+ installations per month of our Desktop application", "Reporting directly to Jack Parmer, CEO of Flojoy and previously CEO & founder of Plotly"]
+  },
+  {
+    company: "Boreal Ventures",
+    start: "May 2023",
+    end: "December 2023",
+    loc: "Montreal, Quebec, Canada",
+    link: "https://boreal.vc",
+    title: "Analyst Seed Stage Venture Capitalist",
+    description: "Market analysis across diverse technical domains such as AI, medical devices, carbon storage, SaaS, and more. - Developing investment return models based on ownership and financial projections. Creating investment memoranda for science-focused companies, which were subsequently shared with the investment committee.",
+    badges: ["VC", "Technologic Market Analysis", "Investment Return Models", "Investment Memoranda"],
+    notes: ["Investments I've worked on: Flojoy, Palisade, Femtum, SamiAgtech"],
+  },
+  {
+    company: "Tesla",
+    start: "Summer",
+    end: 2022,
+    loc: "Palo Alto, California, US",
+    link: "https://tesla.com",
+    title: "Software Engineer Intern",
+    description: "Reverse engineering of a Product Data Modeller (3D Experience) to programmatically access data from a Java GRPC microservice. Refactoring of a Java microservice by simplifying code and removing code duplication. Smoke-test to automatically test microservice on deployment in Python / Pytest / Github action / Helm.",
+    badges: ["Java", "Reverse Engineering Software", "Testing", "Python"],
+    notes: ["Supervisor & Mentor: Manu Radhakrishna - Sr Staff Software Eng."]
+  },
+]
+
+const internships = [
+  {
+    company: "Pratt & Whitney",
+    description: "Automation of an electron beam welding machine based on part dimensions.",
+  },
+  {
+    company: "Innocap",
+    description: "Design, development and deployment of a Python API to automate risk calculations.",
+  },
+  {
+    company: "Desjardins",
+    description: "Development of Kafka Streams applications in Java and DevOps pipeline.",
+  },
+]
+
+
+const projects = [
+  {
+    title: "3D Renderer",
+    description: "A old school 3D Renderer from scratch in C. Can load multiple 3D models with the texture and render them in a window. Done as an learning exercices.",
+    link: "https://github.com/LatentDream/expresso",
+    imgLink: [],
+    techs: ["C", "3D Pipeline"],
+  },
+  // {
+  //   title: "Art Commun",
+  //   description: "[WORK IN PROGRESS] Side project to explore some stuff. Currently, the backend is done using Rust to handle account states and persistence. And I'm currently exploring WebAssembly and what it is about. I have no idea of the desired output, but stay tuned for updates as the project evolves! For a full dev log, visit ArtCommun.com.",
+  //   link: "https://artcommun.com",
+  //   imgLink: [],
+  //   techs: ["Rust", "Postgres", "Redis", "WebAssembly", "Art"],
+  // },
+  {
+    title: "Flojoy Studio",
+    description: "Open-source alternative to LabVIEW & TestStand. Visual programming to extract hardware data and automate tests for mission critical components such as PCBs, wire harnesses, and battery packs.",
+    link: "https://github.com/flojoy-ai/studio/",
+    imgLink: [flojoySequencerImage, flojoyStudioImage, bedOfNailImage],
+    techs: ["Python", "Typescript", "React", "Electron", "Product Design", "UI/UX", "Hardware design"],
+  },
+  {
+    title: "Watson AI",
+    description: "A desktop app allowing user to record and summarize any call automatically. Developed as a side Project while at Boreal Ventures. Turn out the teams is still using it to this day.",
+    imgLink: [watsonImage, watsonImage2],
+    link: "https://github.com/LatentDream/watson.ai/",
+    techs: ["Rust", "AI", "Typescript", "Tauri", "Product Design", "UI/UX", "Plugin integration"],
+  },
+  {
+    title: "Bustelo",
+    description: "CLI & GUI tool to generate the representation of how the infomration is store in a file. This tool can allow to speed up the identification of the file format since it exist some general strcuture that are distinc on how the information is store in each file type.",
+    link: "https://github.com/latentdream/bustelo",
+    imgLink: [bitmap, x86, wav],
+    techs: ["C", "Raylib", "Reverse Engineering"],
+  },
+  {
+    title: "GenAI Hosted Text to Image",
+    description: "Self hosted Text to Image model. Currently offline because I'm GPU poor. :(",
+    link: "https://github.com/LatentDream/Art-commun",
+    imgLink: [PreComputeImage, PostComputeImage],
+    techs: ["GenAI", "Self-hosted AI Model", "Diffusion Model Training", "Python", "Side Project"],
+  },
+  {
+    title: "Duckietown",
+    description: "Focuses on perception, navigation, planning and control problems at the system level integration in the context of self-driving vehicles. Montreal Self driven Class 2022 given by Liam Paul.",
+    link: "https://duckietown.com/",
+    imgLink: [duckietownGif3, duckietownGif1, duckietownGif4],
+    techs: ["Duckietown", "Python", "ROS", "AI", "Perspection", "Planing", "School Project"],
+  },
+  {
+    title: "Technical Analysts & Artificial Intelligence",
+    description: "Technical blog to practice writing. Subject: The idea is to try out image analysis models having the translation invariance property on technical graphs, with the aim that machine learning techniques learn technical analysis signals directly. The article is dedicated to a first proof of concept in the subject.",
+    link: "https://github.com/LatentDream/technical-analysis-trading-dumpster-fire/blob/main/Article_En.ipynb",
+    imgLink: [],
+    techs: ["Technical Writing", "Finance", "Trading", "Deep Learning"],
+  },
+  {
+    title: "Intelligent agent to play Quoridor",
+    description: "A project for the AI class at Polytechnique Montreal. The goal was to develop an intelligent agent to play the game Quoridor.",
+    link: "https://github.com/guthi1/Algo-AI/tree/master/Quorridor%20Projet",
+    imgLink: [q_demo, q_demo2],
+    techs: ["Python", "AI", "Game Theory", "School Project"],
+  },
+  {
+    title: "2nd place at Polytechnique AI Hackatown - 2022",
+    description: "Plant disease classification from images",
+    link: "https://github.com/guthi1/Hackathon-poly-AI-2022",
+    imgLink: [],
+    techs: ["ResNet", "Keras", "Python", "AI", "Hackathon"],
+  },
+  {
+    title: "3rd place Data Challenge HEC - 2021",
+    description: "Predict book sales: In order to try something innovative, we built a pipeline to retrieve the book title, synopsis, and cover of all the books whose identifiers were provided by scraping the web. After performing the data acquisition pipeline, we build a model to perform the prediction. We encoded the texts and images in the embedding and fed them to a pre-trained transformer.",
+    techs: ["NLP", "Data Pipeline", "Python", "AI", "Hackathon"],
+    imgLink: [],
+  },
+]
+
+
+function Cv() {
+  return (
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16 m-auto max-w-[1280px]">
+      <section className="mx-auto w-full max-w-2xl space-y-8 print:space-y-6">
+        <div className="flex justify-between">
+          <div className="flex-none space-y-1.5">
+            <h1 className="text-2xl font-bold items-start">Guillaume Thibault</h1>
+            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
+              Software Engineer 🕹️
+            </p>
+            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+              <a
+                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                href="https://maps.app.goo.gl/fAUkYMT9JjvEEhnS9"
+                target="_blank"
+              >
+                <GlobeIcon className="size-3" />
+                Montreal, Quebec, Canada
+              </a>
+            </p>
+            <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+              <Button
+                className="size-8"
+                variant="outline"
+                size="icon"
+                asChild
+              >
+                <a href={`mailto:email@guillaume.sh`}>
+                  <EnvelopeClosedIcon className="size-4" />
+                </a>
+              </Button>
+              <Button
+                className="size-8"
+                variant="outline"
+                size="icon"
+                asChild
+              >
+                <a href="https://cal.com/guillaume-thibault/30min">
+                  <CalendarIcon className="size-4" />
+                </a>
+              </Button>
+              <Button
+                key="Linkedin"
+                className="size-8"
+                variant="outline"
+                size="icon"
+                asChild
+              >
+                <a href="https://www.linkedin.com/in/guillaume-thibault/" target="_blank">
+                  <LinkedInLogoIcon className="size-4" />
+                </a>
+              </Button>
+              <Button
+                key="Github"
+                className="size-8"
+                variant="outline"
+                size="icon"
+                asChild
+              >
+                <a href="https://github.com/latentDream/" target="_blank">
+                  <GitHubLogoIcon className="size-4" />
+                </a>
+              </Button>
+            </div>
+            <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
+              <a href={`mailto:email@guillaume.sh`}>
+                <span className="underline">email@guillaume.sh</span>
+              </a>
+              <a href={`https://www.linkedin.com/in/guillaume-thibault/`}>
+                <span className="underline">linkedin.com/in/guillaume-thibault</span>
+              </a>
+              <a href={`https://github.com/latentDream/`}>
+                <span className="underline">github.com/latentDream/</span>
+              </a>
+            </div>
+          </div>
+          <ThemeToggle />
+        </div>
+        <Section>
+          <h2 className="text-xl font-bold">About</h2>
+          <p className="text-pretty font-mono text-sm text-muted-foreground">
+            Hi! I'm Guillaume :) Passionate about problem-solving, system building, and art. My journey began with a bachelor's degree in software engineering, where I explored the world of applied mathematics and learned the intricacies of computer systems. Fascinated by their complexity, I completed a professional master's degree in artificial intelligence and data science. I'm interested in the entire software stack, from crafting intuitive user experiences to optimizing backend systems for performance and scalability.
+          </p>
+        </Section>
+        <Section>
+          <h2 className="text-xl font-bold">Work Experiences</h2>
+          {work.map((work) => {
+            return (
+              <Card key={work.company}>
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-x-2 text-base">
+                    <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+                      <a className="hover:underline" href={work.link} target="_blank">
+                        {work.company}
+                      </a>
+                    </h3>
+                    <div className="text-sm tabular-nums text-gray-500">
+                      {work.start} - {work.end}
+                    </div>
+                  </div>
+
+                  <h4 className="font-mono text-sm leading-none">
+                    {work.title}
+                  </h4>
+                </CardHeader>
+                <CardContent variant="note">
+                  {work.loc}
+                </CardContent>
+                <CardContent className="mt-2">
+                  {work.description}
+                </CardContent>
+                <div className="py-0.5" />
+                {work.notes.map((note) => (
+                  <CardContent variant="note">
+                    -{" "}{note}
+                  </CardContent>
+                ))}
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {work.badges.map((badge) => (
+                    <Badge
+                      variant="secondary"
+                      className="align-middle text-xs"
+                      key={badge}
+                    >
+                      {badge}
+                    </Badge>
+                  ))}
+                </div>
+              </Card>
+            );
+          })}
+          {internships.length !== 0 && (
+            <Section className="mt-4">
+              <Card>
+                <CardHeader className="pb-2">
+                  <h3 className="gap-x-1 font-semibold leading-none"> Internships as part of my bachelor's degree </h3>
+                </CardHeader>
+                {internships.map((internship) => (
+                  <>
+                    <h4 className="text-sm mt-0.5">
+                      {internship.company}
+                    </h4>
+                    <CardContent>
+                      -{" "}{internship.description}
+                    </CardContent>
+                  </>
+                ))}
+              </Card>
+            </Section>
+          )}
+          <p className="mt-4 text-xs text-muted-foreground"> Happy to provide recommendations upon request! </p>
+        </Section>
+        <Section>
+          <h2 className="text-xl font-bold">Education</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <Card>
+              <CardHeader>
+                <h3 className="gap-x-1 font-semibold">
+                  Master's degrees in Artificial Intelligence
+                </h3>
+                <h4 className="font-mono text-sm leading-none">
+                  Polytechnique Montreal
+                </h4>
+              </CardHeader>
+              <CardContent className="mt-2 text-xs">
+                Professional Master to get up to speed with artificial intelligence research as well as to discover interesting fields of application.
+              </CardContent>
+              <CardContent className="mt-2 text-xs">
+                The project was done with a pension fund to introduce methods for analyzing sentiment in a currency hedging model while ensuring explainability of results.
+              </CardContent>
+              <CardContent variant="note" className="ml-1">
+                - Presented at Tokyo Tech University in Japan.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <h3 className="gap-x-1 font-semibold">
+                  Bachelor's degree Software Engineering
+                </h3>
+                <h4 className="font-mono text-sm leading-none">
+                  Polytechnique Montreal
+                </h4>
+              </CardHeader>
+              <CardContent className="mt-2 text-xs">
+                With a minor in finance with a focus on sustainable investment & innovation; Enriched by 3 master courses and two international seminars in Europe and Japan.
+              </CardContent>
+              <CardContent className="mt-2 text-xs">
+                Promoted data science through the organization of the first two editions of the Polytechnique data science hackathon. More than 50 participants in graduate study per edition with more than 8 corporate sponsors.
+              </CardContent>
+            </Card>
+          </div>
+        </Section>
+        <Section>
+          <h2 className="text-xl font-bold">Skills</h2>
+          <div className="flex flex-wrap gap-1">
+            <Badge>Python</Badge>
+            <Badge>Rust</Badge>
+            <Badge>TypeScript</Badge>
+            <Badge>SQL</Badge>
+            <Badge>C</Badge>
+            <Badge>Machine Learning</Badge>
+            <Badge>Data Science</Badge>
+            <Badge>Product Design</Badge>
+            <Badge>UI/UX</Badge>
+            <Badge>AWS</Badge>
+            <Badge>French</Badge>
+            <Badge>English</Badge>
+          </div>
+        </Section>
+
+        <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
+          <h2 className="text-xl font-bold">Projects</h2>
+          <p className="text-pretty"> For a list of projects, please visit: <a href={`https://guillaume.sh`}>
+            <span className="underline">guillaume.sh</span>
+          </a></p>
+        </div>
+
+        <Section className="print-force-new-page scroll-mb-16 print:hidden">
+          <h2 className="text-xl font-bold">Projects</h2>
+          <div className="-mx-3">
+            {projects.map((project) => (
+              <Card className="border border-muted p-3 my-1" key={project.title}>
+                <CardHeader className="relative x-[-1rem]">
+                  <h3 className="inline-flex gap-2 mx-2 gap-x-1 font-semibold">
+                    {project.link !== undefined ? (
+                      <>
+                        <a className="hover:underline" href={project.link} target="_blank">
+                          {project.title}
+                        </a>
+                        {project.link?.includes("github") ? (
+                          <GitHubLogoIcon className="size-4 mt-1" />
+                        ) : (
+                          <GlobeIcon className="size-4 mt-1" />
+                        )}
+                      </>
+                    ) : (<p>{project.title}</p>)}
+                  </h3>
+                </CardHeader>
+                <CardContent className="mx-2">
+                  {project.description}
+                </CardContent>
+                {project.imgLink.length > 0 && (
+                  <Carousel className="mx-12 my-2 items-center">
+                    <CarouselContent>
+                      {project.imgLink.map((img) => (
+                        <CarouselItem className="items-center">
+                          <img src={img} alt="" className="rounded-lg" />
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+
+                    {project.imgLink.length > 1 && (
+                      <>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                      </>
+                    )}
+                  </Carousel>
+                )}
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {project.techs.map((tech) => (
+                    <Badge
+                      variant="secondary"
+                      className="align-middle text-xs"
+                      key={tech}
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Section>
+      </section>
+    </main>
+  )
+}
+
+export default Cv 
