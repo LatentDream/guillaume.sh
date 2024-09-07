@@ -107,3 +107,7 @@ Ensure you set up the following secrets in your GitHub repository:
 
 - Allow time for DNS propagation and certificate validation (up to 24 hours in some cases).
 - For single-page applications, configure CloudFront to redirect all 404 errors to `index.html`.
+
+# Schema
+
+![aws](./aws.png)
