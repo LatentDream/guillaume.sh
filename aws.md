@@ -111,3 +111,107 @@ Ensure you set up the following secrets in your GitHub repository:
 # Schema
 
 ![aws](./aws.png)
+
+# Lambda on Edge
+Interject logic at any one of four spots in the request/response cycle.
+
+After CloudFront receives a request from a viewer (viewer request)
+Before CloudFront forwards the request to the origin (origin request)
+After CloudFront receives the response from the origin (origin response)
+Before CloudFront forwards the response to the viewer (viewer response
+
+## Recipes
+
+### Redirecting to `index.html` on Valid Client-side Routes
+
+Implement as a **Viewer Request**.
+
+```js
+export const handler = async (event) => {
+  const request = event.Records[0].cf.request;
+
+  console.log('Before', request.uri);
+
+  if (/notes\/\d(\/edit)?/.test(request.uri)) {
+    request.uri = '/index.html';
+  }
+
+  console.log('After', request.uri);
+
+  return request;
+};
+```
+
+### Implementing Security Headers
+
+Implment as a **Viewer Response**.
+
+```js
+export const handler = async (event) => {
+  const response = event.Records[0].cf.response;
+  const headers = response.headers;
+
+  headers['strict-transport-security'] = [
+    {
+      key: 'Strict-Transport-Security',
+      value: 'max-age=63072000; includeSubdomains; preload',
+    },
+  ];
+
+  headers['content-security-policy'] = [
+    {
+      key: 'Content-Security-Policy',
+      value:
+        "default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'",
+    },
+  ];
+
+  headers['x-content-type-options'] = [
+    { key: 'X-Content-Type-Options', value: 'nosniff' },
+  ];
+
+  headers['x-frame-options'] = [{ key: 'X-Frame-Options', value: 'DENY' }];
+
+  headers['x-xss-protection'] = [
+    { key: 'X-XSS-Protection', value: '1; mode=block' },
+  ];
+
+  headers['referrer-policy'] = [
+    { key: 'Referrer-Policy', value: 'same-origin' },
+  ];
+
+  headers['server'] = [{ key: 'Server', value: 'Latent Server' }];
+
+  return response;
+};
+```
+
+### Implementing a Redirect
+
+Implement as a **Origin Request**.
+
+```js
+export const handler = async (event) => {
+  const request = event.Records[0].cf.request;
+
+  const response = {
+    status: '302',
+    statusDescription: 'Found',
+    headers: {
+      location: [
+        {
+          key: 'Location',
+          value: 'https://bit.ly/very-secret',
+        },
+      ],
+    },
+  };
+
+  if (request.uri === '/secret') {
+    console.log('Got it');
+    return response;
+  }
+
+  return request;
+};
+```
