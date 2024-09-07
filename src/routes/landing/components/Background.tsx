@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import dontlookImage from '@/assets/random/dontlook.jpeg';
-import blueImage from '@/assets/random/blue.jpeg';
-import summerImage from '@/assets/random/summer.jpeg';
+import dontlookImage from '@/assets/random/dontlook.webp';
+import blueImage from '@/assets/random/blue.webp';
+import summerImage from '@/assets/random/summer.webp';
 import { Theme, useLandingTheme } from './LandingThemeContext';
 interface BackgroundProps {
   children?: React.ReactNode;
