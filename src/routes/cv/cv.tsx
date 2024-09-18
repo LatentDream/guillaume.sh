@@ -29,22 +29,22 @@ const work = [
     company: "Contractor - Ploomber.io (YC W22)",
     start: "August 2024",
     end: "Ongoing",
-    loc: "",
+    loc: "New York - Remote",
     link: "https://ploomber.io",
     title: "Software Engineer",
-    description: "Working on tools to streamline Data Science.",
-    badges: [],
+    description: "Developing tools to streamline Data Science workflows. Focus on enhancing user interaction with the platform through frontend improvements, backend development, AI integration, and competitive analysis. Collaborating with the CEO to test marketing strategies and product ideas.",
+    badges: ["React", "Python", "Analytics", "Product Development"],
     notes: []
   },
   {
     company: "Contractor - Astrovault.io",
     start: "June 2024",
     end: "August 2024",
-    loc: "",
+    loc: "Decentralized company - Remote",
     link: "https://astrovault.io",
     title: "Rust / React Developer for Solana Blockchain",
-    description: "Developing the Port of Astrovault for the Solana blockchain, with www.webisoft.com.",
-    badges: [],
+    description: "Led the development of the outbid system port for Astrovault on the Solana blockchain. Completed and refined frontend work initiated by a previous contractor while implementing core smart contract logic.",
+    badges: ["Rust", "React", "Solana", "Smart Contract", "Web3"],
     notes: []
   },
   {

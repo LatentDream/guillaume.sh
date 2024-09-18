@@ -3,7 +3,7 @@ import { ThemeProvider } from './components/providers/themeProvider'
 import { BrowserRouter, Route, Routes, useRouteError } from 'react-router-dom'
 import Cv from './routes/cv/cv';
 import React from 'react';
-import Landing from './routes/landing/Landing';
+// import Landing from './routes/landing/Landing';
 import Watson from './routes/watson/Watson';
 
 
@@ -25,7 +25,8 @@ function App() {
             <Routes>
               <Route
                 path="/"
-                element={<Landing />}
+                // element={<Landing />}
+                element={<Cv />}
                 errorElement={<ErrorBoundary />}
               />
               <Route
